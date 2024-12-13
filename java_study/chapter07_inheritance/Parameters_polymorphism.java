@@ -28,3 +28,43 @@ void drive(vehicle vehicle) {
     vehicle.run();  // 자식 객체가 재정의한 run() 메서드 실행
 }
  */
+public  class Vehicle {
+    public void run() {
+        System.out.println("차량이 달립니다.");
+    }
+}
+
+// Vehicle을 이용하는 클래스
+public class Driver {
+    public void drive(Vehicle vehicle) {
+        vehicle.run();
+    }
+}
+
+// 자식클래스
+public class Bus extends Vehicle {
+    @java.lang.Override
+    public void run() {
+        System.out.println("버스가 달립니다.");
+    }
+}
+
+// 자식클래스
+public class Taxi extends Vehicle {
+    @java.lang.Override
+    public void run() {
+        System.out.println("택시가 달립니다.");
+    }
+}
+
+// 실행클래스
+public class DriveExampme {
+    public static void main(String[] args) {
+        Driver driver = new Driver();
+        Bus bus = new Bus();
+        Taxi taxi = new Taxi();
+
+        driver.drive(bus);  // 자동 타입 변환: Vehicle vehicle = bus;
+        driver.drive(taxi); // 자동 타입 변환: Vehicle vehicle = taxi;
+    }
+}
