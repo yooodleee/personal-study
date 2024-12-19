@@ -1,5 +1,4 @@
 # personal-study
----
 
 ## **Personal Programming Repository**
 
