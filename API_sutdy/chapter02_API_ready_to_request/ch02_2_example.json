@@ -1,0 +1,19 @@
+{
+    {
+        "massage": "Was awesome.",
+        "rating": 5,
+        "uuid": "16f5e7e1-b581-4ca4-8af2-8dead5895869",
+        "userId": null
+    },
+    {
+        "message": "Was awful",
+        ...pass...
+    }
+}
+
+{
+    "message": "was pretty good.",
+    "rating": 4,
+    "uuid": "43b8882b-c67f-44f9-adb3-e717d7b6bf0a",
+    "userId": null
+}
