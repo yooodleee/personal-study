@@ -1,0 +1,21 @@
+{
+    "success": {
+        "total": 1
+    },
+    "contents": {
+        "translated": "{text}",
+        "text": "{text}",
+        "translation": "pirate"
+    }
+}
+
+{
+    "success": {
+        "total": 1
+    },
+    "contents": {
+        "translated": "Ahoy Good matey",
+        "text": "Hello Good Sir",
+        "translation": "pirate"
+    }
+}
