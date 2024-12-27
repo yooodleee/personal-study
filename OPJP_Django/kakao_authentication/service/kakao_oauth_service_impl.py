@@ -3,6 +3,7 @@ from kakao_authentication.service.kakao_oauth_service import KakaoOauthService
 
 
 class KakaoOauthServiceImpl(KakaoOauthService):
+    # 싱글턴 선언언
     __instance = None
 
     def __new__(cls):
@@ -20,6 +21,8 @@ class KakaoOauthServiceImpl(KakaoOauthService):
         
         return cls.__instance
     
+    # 우리가 Repository에서 생성해주었던 객체들을 필요에 따라 가져와주고 있습니다.
+    # 각각 getOauthLink(), getAccessToken(), getUserInfo()로 보아 권한 링크 가져오고, 접근 토큰 가져오고, 사용자 정보를 가져오는 것 같군요.
     def requestKakaoOauthLink(self):
         return self.__kakaoOauthRepository.getOauthLink()
     
