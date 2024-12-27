@@ -1,0 +1,11 @@
+{% if question_list %}   // question_list가 있다면
+    <ul>
+    {% for question in question_list %} // question_list를 반복하며 순차적으로 question에 대입
+        <li><a href="/pybo/{{ question.id }}/">{{ question.subject }}</a></li>
+    {% endfor %}    
+    </ul>
+{% else %}  
+    <p>질문이 없습니다.</p>
+{% endif %}
+
+// 탬플릿 태그 {% %}
