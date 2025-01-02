@@ -51,3 +51,7 @@ def answer_create(request, question_id):
         content = request.POST.get('content'),
         create_date = timezone.now(),
     )
+    return redirect(
+        'pybo:detail',
+        question_id=question_id
+    )

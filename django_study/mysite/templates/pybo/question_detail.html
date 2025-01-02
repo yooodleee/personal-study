@@ -4,8 +4,13 @@
     {{ question.content }}
 </div>
 
-<form action="{% url 'pybo:answer_create' question.id} %" method="post">
-    {% csrf_token %}
-    <textarea name="content" id="content" rows="15"></textarea>
-    <input type="submit" value="답변 등록">
-</form>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+<div class="container my-3">
+    <h2 class="border-bottom py-2">{{ question.subject }}</h2>
+    <div class="card my-3">
+        <div class="card-body">
+            
+        </div>
+    </div>
+</div>
