@@ -25,10 +25,29 @@ HTML 코드로 변환함.
 
 def detail(request, question_id):
     """pybo 내용 출력"""
-
-    # 존재하지 않는 페이지에 접속하면 오류 대신 404 페이지 출력
-    # 모델의 기본키를 이용하여 모델 객체 한 건을 반환함
-    # pk에 해당하는 건이 없으면 오류 대신 404 페이지를 반환(Not Found)
     question = get_object_or_404(Question, pk=question_id)
     context = {'question': question}
     return render(request, 'pybo/question_detail.html', context)
+
+
+from django.shortcuts import (
+    render,
+    get_object_or_404,
+    redirect,
+)
+from .models import Question
+from django.utils import timezone
+
+
+def answer_create(request, question_id):
+    """
+    pybo 답변 등록
+    """
+    
+    question = get_object_or_404(Question, pk=question_id)
+    # answer = Answer(question=question, content=request.POST.get('content'), create_date=timezone.now())
+    # answer.save()
+    question.answer_set.create(
+        content = request.POST.get('content'),
+        create_date = timezone.now(),
+    )
