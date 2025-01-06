@@ -1,0 +1,82 @@
+<3장>
+[표 3-2] 개방 데이터를 제공하는 사이트
+http://data.go.kr		한국 정부에서 제공하는 공공데이터
+http://kostat.go.kr		한국 통계청에서 공개하는 데이터
+http://opendata.hira.or.kr	한국 보건 의료 빅데이터 개방 시스템
+http://www.localdata.kr	한국 지방행정 인허가 데이터
+https://www.mcst.go.kr	한국 문화체육관광부 문화 데이터
+http://data.seoul.go.kr	서울시 열린데이터 광장
+https://data.gg.go.kr	경기도 공공데이터 개방 포털
+http://data.gov		미국 정부의 공공데이터
+http://data.worldbank.org	세계 은행에서 제공하는 개방 데이터
+http://open.fda.gov		미국 식약청의 개방 데이터
+
+
+<4장>
+파이썬 공식 홈페이지	www.python.org
+
+
+<5장>
+[표 5-1] 웹 API 제공자
+네이버 개발자 센터			https://developers.naver.com
+카카오 앱 개발 플랫폼 서비스	https://developers.kakao.com
+페이스북 개발자 센터		https://developers.facebook.com
+트위터 개발자 센터			https://developer.twitter.com
+공공데이터포털			https://www.data.go.kr
+세계 날씨				http://openweathermap.org
+유료/무료 API 스토어		http://mashup.or.kr
+				http://www.apistore.co.kr/api/apiList.do
+
+네이버 개발자 센터			https://developers.naver.com
+네이버 검색 API 개발자 가이드	https://developers.naver.com/docs/search/news
+공공데이터포털			www.data.go.kr
+서울 열린데이터 광장		http://data.seoul.go.kr
+
+
+<6장>
+할리스커피 홈페이지		http://www.hollys.co.kr
+WebDriver 다운로드 사이트		https://www.selenium.dev/downloads/
+커피빈 홈페이지			www.coffeebeankorea.com
+증시 정보 크롤링			https://finance.naver.com/
+
+
+<7장>
+와인 데이터셋 다운로드		https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality
+
+
+<8장>
+한국교육학술정보원 KERIS의 학술정보서비스 RISS 사이트		http://www.riss.kr
+KoNLPy 패키지			https://konlpy.org/ko/latest
+
+
+<9장>
+국가통계포털 사이트		http://kosis.kr
+구글맵				http://maps.google.co.kr
+공간정보시스템/딥러닝 기반 기술 연구소 사이트			http://www.gisdeveloper.co.kr
+GIS 게시판			http://www.gisdeveloper.co.kr/?cat=44
+공공데이터포털 사이트		www.data.go.kr
+
+
+<10장>
+UCI Machine Learning Repository	https://archive.ics.uci.edu
+
+
+<11장>
+UCI Machine Learning Repository	https://archive.ics.uci.edu
+Graphviz 패키지 다운로드 사이트	https://www2.graphviz.org/Packages/stable/windows/10/cmake/Release/x64/
+
+
+<12장>
+UCI Machine Learning Repository	https://archive.ics.uci.edu
+
+
+<13장>
+영화 리뷰 데이터 다운로드 사이트	https://github.com/e9t/nsmc
+
+
+<부록>
+아나콘다 다운로드			https://www.anaconda.com/distribution
+KoNLPy 패키지 설치 참고 페이지	https://konlpy.org/ko/latest/install/#id2
+JDK 다운로드 사이트		https://www.oracle.com/java/technologies/javase-downloads.html
+JPype1 다운로드 사이트		https://www.lfd.uci.edu/~gohlke/pythonlibs/#jpype
+
