@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.lombok=1
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=1
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=sbb
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=3.4.2-SNAPSHOT
