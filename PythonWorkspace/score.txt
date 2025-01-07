@@ -1,0 +1,4 @@
+math:0
+english:50
+science:80
+coding:100
