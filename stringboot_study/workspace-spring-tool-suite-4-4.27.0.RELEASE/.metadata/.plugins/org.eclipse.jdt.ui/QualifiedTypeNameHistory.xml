@@ -2,4 +2,7 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
     <fullyQualifiedTypeName name="com.mysite.sbb.HelloLombok"/>
+    <fullyQualifiedTypeName name="lombok.Setter"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.StaticApplicationContext"/>
+    <fullyQualifiedTypeName name="com.mysite.sbb.Question"/>
 </qualifiedTypeNameHistroy>
