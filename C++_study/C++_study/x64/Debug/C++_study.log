@@ -1,0 +1,2 @@
+﻿source1_2.obj : error LNK2005: main이(가) C++_study.obj에 이미 정의되어 있습니다.
+C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\C++_study\x64\Debug\C++_study.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.
