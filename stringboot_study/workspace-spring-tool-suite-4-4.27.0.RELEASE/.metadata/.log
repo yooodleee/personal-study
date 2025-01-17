@@ -1608,3 +1608,9 @@ java.lang.ClassNotFoundException: org.springframework.tooling.boot.ls.commands.C
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-01-17 12:45:47.298
+!MESSAGE Classpath changed for project: sbb
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-01-17 12:45:50.445
+!MESSAGE Classpath changed for project: sbb
