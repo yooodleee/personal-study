@@ -1,2 +1,9 @@
-﻿source1_2.obj : error LNK2005: main이(가) C++_study.obj에 이미 정의되어 있습니다.
-C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\C++_study\x64\Debug\C++_study.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.
+﻿  source1_4.cpp
+C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\C++_study\C++_study\source1_4.cpp(4,6): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\C++_study\C++_study\source1_4.cpp(6,13): warning C4309: '초기화 중': 상수 값이 잘립니다.
+C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\C++_study\C++_study\source1_4.cpp(7,13): error C2177: 상수가 너무 큽니다.
+C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\C++_study\C++_study\source1_4.cpp(8,13): error C4146: 단항 빼기 연산자가 부호 없는 형식에 적용되었습니다. 결과는 역시 unsigned입니다.
+C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\C++_study\C++_study\source1_4.cpp(9,14): error C2177: 상수가 너무 큽니다.
+  source1_6.cpp
+C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\C++_study\C++_study\source1_6.cpp(5,6): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  코드를 생성하고 있습니다...
