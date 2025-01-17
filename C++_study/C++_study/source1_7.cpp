@@ -16,7 +16,7 @@ void main()
 	f[9] = 8388608.9;
 
 	cout.precision(32);				// (1)
-	for (int i = 0; i < 10 i++)
+	for (int i = 0; i < 10; i++)
 	{
 		cout << f[i] << endl;
 	}

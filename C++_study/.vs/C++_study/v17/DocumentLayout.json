@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\C\u002B\u002B_study\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A8A956-D955-4C31-A04D-FEC4F110687A}|C\u002B\u002B_study\\C\u002B\u002B_study.vcxproj|C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\C\u002B\u002B_study\\C\u002B\u002B_study\\source1_6.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B7A8A956-D955-4C31-A04D-FEC4F110687A}|C\u002B\u002B_study\\C\u002B\u002B_study.vcxproj|solutionrelative:C\u002B\u002B_study\\source1_6.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A8A956-D955-4C31-A04D-FEC4F110687A}|C\u002B\u002B_study\\C\u002B\u002B_study.vcxproj|C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\C\u002B\u002B_study\\C\u002B\u002B_study\\source1_10.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B7A8A956-D955-4C31-A04D-FEC4F110687A}|C\u002B\u002B_study\\C\u002B\u002B_study.vcxproj|solutionrelative:C\u002B\u002B_study\\source1_10.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "source1_10.cpp",
+              "DocumentMoniker": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\C\u002B\u002B_study\\C\u002B\u002B_study\\source1_10.cpp",
+              "RelativeDocumentMoniker": "C\u002B\u002B_study\\source1_10.cpp",
+              "ToolTip": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\C\u002B\u002B_study\\C\u002B\u002B_study\\source1_10.cpp",
+              "RelativeToolTip": "C\u002B\u002B_study\\source1_10.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-17T01:49:03.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "source1_6.cpp",
+              "DocumentMoniker": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\C\u002B\u002B_study\\C\u002B\u002B_study\\source1_6.cpp",
+              "RelativeDocumentMoniker": "C\u002B\u002B_study\\source1_6.cpp",
+              "ToolTip": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\C\u002B\u002B_study\\C\u002B\u002B_study\\source1_6.cpp",
+              "RelativeToolTip": "C\u002B\u002B_study\\source1_6.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-17T01:48:44.288Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
