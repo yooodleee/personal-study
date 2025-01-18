@@ -1,0 +1,2 @@
+2024-08-21 09:16:33 [scrapy.utils.log] INFO: Scrapy 1.5.2 started (bot: wikiSpider)
+2024-08-21 09:16:33 [scrapy.utils.log] INFO: Versions: lxml 4.9.1.0, libxml2 2.9.14, cssselect 1.1.0, parsel 1.6.0, w3lib 1.21.0, Twisted 22.2.0, Python 3.7.16 (default, Jan 17 2023, 16:06:28) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 23.0.0 (OpenSSL 1.1.1w  11 Sep 2023), cryptography 39.0.1, Platform Windows-10-10.0.22621-SP0
