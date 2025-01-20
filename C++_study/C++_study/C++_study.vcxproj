@@ -134,6 +134,11 @@
     <ClCompile Include="source1_10.cpp" />
     <ClCompile Include="source1_11.cpp" />
     <ClCompile Include="source1_12.cpp" />
+    <ClCompile Include="source1_13.cpp" />
+    <ClCompile Include="source1_14.cpp" />
+    <ClCompile Include="source1_15.cpp" />
+    <ClCompile Include="source1_16.cpp" />
+    <ClCompile Include="source1_17.cpp" />
     <ClCompile Include="source1_2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
