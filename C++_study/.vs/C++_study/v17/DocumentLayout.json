@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\C\u002B\u002B_study\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A8A956-D955-4C31-A04D-FEC4F110687A}|C\u002B\u002B_study\\C\u002B\u002B_study.vcxproj|C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\C\u002B\u002B_study\\C\u002B\u002B_study\\source1_17.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B7A8A956-D955-4C31-A04D-FEC4F110687A}|C\u002B\u002B_study\\C\u002B\u002B_study.vcxproj|solutionrelative:C\u002B\u002B_study\\source1_17.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "source1_17.cpp",
+              "DocumentMoniker": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\C\u002B\u002B_study\\C\u002B\u002B_study\\source1_17.cpp",
+              "RelativeDocumentMoniker": "C\u002B\u002B_study\\source1_17.cpp",
+              "ToolTip": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\C\u002B\u002B_study\\C\u002B\u002B_study\\source1_17.cpp",
+              "RelativeToolTip": "C\u002B\u002B_study\\source1_17.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-22T03:39:09.43Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
