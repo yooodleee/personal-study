@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\Fundamental_C_study\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5BC6117B-05F8-41A6-B6DE-E336DFF8BC65}|Fundamental_C_study\\Fundamental_C_study.vcxproj|C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\Fundamental_C_study\\Fundamental_C_study\\source1_24.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BC6117B-05F8-41A6-B6DE-E336DFF8BC65}|Fundamental_C_study\\Fundamental_C_study.vcxproj|solutionrelative:Fundamental_C_study\\source1_24.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BC6117B-05F8-41A6-B6DE-E336DFF8BC65}|Fundamental_C_study\\Fundamental_C_study.vcxproj|C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\Fundamental_C_study\\Fundamental_C_study\\source1_23.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BC6117B-05F8-41A6-B6DE-E336DFF8BC65}|Fundamental_C_study\\Fundamental_C_study.vcxproj|solutionrelative:Fundamental_C_study\\source1_23.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "source1_24.cpp",
+              "DocumentMoniker": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\Fundamental_C_study\\Fundamental_C_study\\source1_24.cpp",
+              "RelativeDocumentMoniker": "Fundamental_C_study\\source1_24.cpp",
+              "ToolTip": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\Fundamental_C_study\\Fundamental_C_study\\source1_24.cpp*",
+              "RelativeToolTip": "Fundamental_C_study\\source1_24.cpp*",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-23T02:37:59.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "source1_23.cpp",
+              "DocumentMoniker": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\Fundamental_C_study\\Fundamental_C_study\\source1_23.cpp",
+              "RelativeDocumentMoniker": "Fundamental_C_study\\source1_23.cpp",
+              "ToolTip": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\Fundamental_C_study\\Fundamental_C_study\\source1_23.cpp",
+              "RelativeToolTip": "Fundamental_C_study\\source1_23.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-23T02:32:09.52Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
