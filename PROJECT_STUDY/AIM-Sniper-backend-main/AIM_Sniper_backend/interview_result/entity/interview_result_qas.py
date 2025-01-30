@@ -8,7 +8,9 @@ class InterviewResultQAS(models.Model):
     answer = models.TextField(unique=False)
     intent = models.CharField(max_length=8, unique=False)
     feedback = models.TextField(unique=False)
-    interview_result = models.ForeignKey(InterviewResult, on_delete=models.CASCADE, db_column='interview_result')
+    interview_result = models.ForeignKey(InterviewResult, 
+                                         on_delete=models.CASCADE, 
+                                         db_column='interview_result')
 
     class Meta:
         db_table = 'interview_result_qa_score'

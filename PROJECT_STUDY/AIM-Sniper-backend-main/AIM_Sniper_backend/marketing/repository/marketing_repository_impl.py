@@ -11,8 +11,10 @@ class MarketingRepositoryImpl(MarketingRepository):
     def __new__(cls):
         if cls.__instance is None:
             cls.__instance = super().__new__(cls)
-            cls.__instance.__profileRepository = ProfileRepositoryImpl.getInstance()
-            cls.__instance.__companyReportRepository = CompanyReportRepositoryImpl.getInstance()
+            cls.__instance.__profileRepository = \
+                ProfileRepositoryImpl.getInstance()
+            cls.__instance.__companyReportRepository = \
+                CompanyReportRepositoryImpl.getInstance()
         return cls.__instance
 
     @classmethod
@@ -23,7 +25,9 @@ class MarketingRepositoryImpl(MarketingRepository):
 
     def makeCount(self, email, product_id, purchase):
         profile = self.__profileRepository.findByEmail(email)
-        product = self.__companyReportRepository.findByCompanyReportId(product_id)
+        product = self.__companyReportRepository.findByCompanyReportId(
+            product_id
+        )
         marketing, created = Marketing.objects.get_or_create(
             account=profile.account,
             product=product

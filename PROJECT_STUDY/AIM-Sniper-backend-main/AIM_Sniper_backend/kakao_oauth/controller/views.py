@@ -34,6 +34,7 @@ class OauthView(viewsets.ViewSet):
             accessToken = self.kakaoOauthService.requestAccessToken(code)
             print(f"accessToken: {accessToken}")
             return JsonResponse({'accessToken': accessToken})
+        
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=500)
 
@@ -44,6 +45,7 @@ class OauthView(viewsets.ViewSet):
         try:
             user_info = self.kakaoOauthService.requestUserInfo(accessToken)
             return JsonResponse({'user_info': user_info})
+        
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=500)
 
@@ -53,7 +55,10 @@ class OauthView(viewsets.ViewSet):
             print(f"redisAccessToken -> email: {email}")
             account = self.accountService.findAccountByEmail(email)
             if not account:
-                return Response({'error': 'Account not found'}, status=status.HTTP_404_NOT_FOUND)
+                return Response(
+                    {'error': 'Account not found'}, 
+                    status=status.HTTP_404_NOT_FOUND
+                )
 
             userToken = str(uuid.uuid4())
             print(f"type of account.id: {type(account.id)}")
@@ -62,17 +67,31 @@ class OauthView(viewsets.ViewSet):
             accountId = self.redisService.getValueByKey(userToken)
             print(f"accountId: {accountId}")
 
-            return Response({ 'userToken': userToken }, status=status.HTTP_200_OK)
+            return Response(
+                { 'userToken': userToken }, 
+                status=status.HTTP_200_OK
+            )
+        
         except Exception as e:
             print('Error storing access token in Redis:', e)
-            return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {'error': str(e)}, 
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
     def dropRedisTokenForLogout(self, request):
         try:
             userToken = request.data.get('userToken')
             isSuccess = self.redisService.deleteKey(userToken)
 
-            return Response({'isSuccess': isSuccess}, status=status.HTTP_200_OK)
+            return Response(
+                {'isSuccess': isSuccess}, 
+                status=status.HTTP_200_OK
+            )
+        
         except Exception as e:
             print('레디스 토큰 해제 중 에러 발생:', e)
-            return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {'error': str(e)}, 
+                status=status.HTTP_400_BAD_REQUEST
+            )

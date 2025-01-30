@@ -20,8 +20,14 @@ class SurveySelectionRepositoryImpl(SurveySelectionRepository):
 
     def registerSelection(self, question, selection):
         try:
-            SurveySelection.objects.create(survey_question_id=question, selection=selection)
-            serveySelection = SurveySelection.objects.get(survey_question_id=question, selection=selection)
+            SurveySelection.objects.create(
+                survey_question_id=question, 
+                selection=selection
+            )
+            serveySelection = SurveySelection.objects.get(
+                survey_question_id=question, 
+                selection=selection
+            )
 
             return serveySelection.id
 
@@ -29,7 +35,10 @@ class SurveySelectionRepositoryImpl(SurveySelectionRepository):
             print('Selection 저장 중 오류 발생 : ', e)
 
     def getSelectionsByQuestionId(self, questionId):
-        selections = SurveySelection.objects.filter(survey_question_id=questionId).order_by('id').values_list('selection')
+        selections = \
+            SurveySelection.objects.filter(
+                survey_question_id=questionId).order_by(
+                    'id').values_list('selection')
         listSelections = []
         for s in selections :
             listSelections.append(s[0])
@@ -41,7 +50,10 @@ class SurveySelectionRepositoryImpl(SurveySelectionRepository):
         return selection
 
     def findSelectionBySelectionName(self, question, selectionName):
-        selection = SurveySelection.objects.get(survey_question_id=question, selection=selectionName)
+        selection = SurveySelection.objects.get(
+            survey_question_id=question, 
+            selection=selectionName
+        )
         return selection
 
 

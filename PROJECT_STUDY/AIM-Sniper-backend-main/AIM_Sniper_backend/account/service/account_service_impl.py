@@ -30,9 +30,28 @@ class AccountServiceImpl(AccountService):
         profile = self.__profileRepository.findByNickname(nickname)
         return profile is not None
 
-    def registerAccount(self, loginType, roleType, nickname, email, password, salt, gender, birthyear):
+    def registerAccount(
+            self, 
+            loginType, 
+            roleType, 
+            nickname, 
+            email, 
+            password, 
+            salt, 
+            gender, 
+            birthyear
+        ):
+        
         account = self.__accountRepository.create(loginType, roleType)
-        return self.__profileRepository.create(nickname, email, password, salt, gender, birthyear, account)
+        return self.__profileRepository.create(
+            nickname, 
+            email, 
+            password, 
+            salt, 
+            gender, 
+            birthyear, 
+            account
+        )
 
     def findAccountByEmail(self, email):
         profile = self.__profileRepository.findByEmail(email)
@@ -40,11 +59,12 @@ class AccountServiceImpl(AccountService):
             self.__profileRepository.updateLastLogin(profile)
             self.__profileRepository.update_login_history(profile)
         return profile
+    
     def findAccountById(self, accountId):
         return self.__accountRepository.findById(accountId)
 
     def checkPasswordDuplication(self, email,password):
-        account = self.__profileRepository.findByPassword(email,password)
+        account = self.__profileRepository.findByPassword(email, password)
         return account
 
     def withdrawAccount(self, accountId, withdrawReason):
@@ -52,11 +72,12 @@ class AccountServiceImpl(AccountService):
         try:
             self.__accountRepository.withdrawAccount(account, withdrawReason)
             return True
+        
         except Exception as e:
             print(f"withdraw_account error: {e}")
             return False
 
-    def findRoleTypeByEmail(self,email):
+    def findRoleTypeByEmail(self, email):
         RoleType = self.__profileRepository.findByRoleType(email)
         return RoleType
 

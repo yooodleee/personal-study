@@ -8,7 +8,8 @@ class ManagementServiceImpl(ManagementService):
     def __new__(cls):
         if cls.__instance is None:
             cls.__instance = super().__new__(cls)
-            cls.__instance.__managementRepository = ManagementRepositoryImpl.getInstance()
+            cls.__instance.__managementRepository = \
+                ManagementRepositoryImpl.getInstance()
         return cls.__instance
 
     @classmethod
@@ -31,6 +32,3 @@ class ManagementServiceImpl(ManagementService):
 
     def getUserLogData(self):
         return self.__managementRepository.userLogData()
-
-
-

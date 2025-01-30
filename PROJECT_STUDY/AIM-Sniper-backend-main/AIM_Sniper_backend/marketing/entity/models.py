@@ -6,14 +6,20 @@ from company_report.entity.models import CompanyReport
 
 class Marketing(models.Model):
     id = models.AutoField(primary_key=True)
-    account = models.ForeignKey(Account, on_delete=models.CASCADE, related_name='marketing')
-    product = models.ForeignKey(CompanyReport, on_delete=models.CASCADE, related_name='marketing')
+    account = models.ForeignKey(Account, 
+                                on_delete=models.CASCADE, 
+                                related_name='marketing')
+    product = models.ForeignKey(CompanyReport, 
+                                on_delete=models.CASCADE, 
+                                related_name='marketing')
     click_count = models.PositiveSmallIntegerField(default=1)
     purchase = models.BooleanField(default=False)
     last_click_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return f"Marketing -> id: {self.id}, account: {self.account}, product: {self.product}"
+        return f"Marketing -> id: {self.id}, 
+                account: {self.account}, 
+                product: {self.product}"
 
     class Meta:
         db_table = 'marketing'

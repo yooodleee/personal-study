@@ -5,7 +5,9 @@ from account.entity.account import Account
 
 class Cart(models.Model):
     cartId = models.AutoField(primary_key=True)
-    account = models.ForeignKey(Account, on_delete=models.CASCADE, related_name='carts')
+    account = models.ForeignKey(Account, 
+                                on_delete=models.CASCADE, 
+                                related_name='carts')
     createdDate = models.DateTimeField(auto_now_add=True)
     updatedDate = models.DateTimeField(auto_now=True)
 

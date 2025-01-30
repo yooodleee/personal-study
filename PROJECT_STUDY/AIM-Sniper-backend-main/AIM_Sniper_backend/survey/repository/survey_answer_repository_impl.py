@@ -25,10 +25,19 @@ class SurveyAnswerRepositoryImpl(SurveyAnswerRepository):
     def saveTextAnswer(self,  question, answer, account):
         try:
             if account is not None:
-                SurveyAnswer.objects.create(survey_question_id=question, answer=answer, account=account)
+                SurveyAnswer.objects.create(
+                    survey_question_id=question, 
+                    answer=answer, 
+                    account=account
+                )
+
             else:
-                SurveyAnswer.objects.create(survey_question_id=question, answer=answer)
+                SurveyAnswer.objects.create(
+                    survey_question_id=question, 
+                    answer=answer
+                )
             return True
+        
         except Exception as e :
             print('text answer 저장 과정에서 오류 발생! : ', e)
             return False
@@ -36,10 +45,19 @@ class SurveyAnswerRepositoryImpl(SurveyAnswerRepository):
     def saveRadioAnswer(self, question, selectionId, account):
         try:
             if account is not None:
-                SurveyAnswer.objects.create(survey_question_id=question, survey_selection_id=selectionId, account=account)
+                SurveyAnswer.objects.create(
+                    survey_question_id=question, 
+                    survey_selection_id=selectionId, 
+                    account=account
+                )
+
             else:
-                SurveyAnswer.objects.create(survey_question_id=question, survey_selection_id=selectionId)
+                SurveyAnswer.objects.create(
+                    survey_question_id=question, 
+                    survey_selection_id=selectionId
+                )
             return True
+        
         except Exception as e :
             print('radio answer 저장 과정에서 오류 발생! : ', e)
             return False
@@ -49,24 +67,40 @@ class SurveyAnswerRepositoryImpl(SurveyAnswerRepository):
         try:
             for selectionId in selectionIdArray:
                 if account is not None:
-                    SurveyAnswer.objects.create(survey_question_id=question, survey_selection_id=selectionId, account=account)
+                    SurveyAnswer.objects.create(
+                        survey_question_id=question, 
+                        survey_selection_id=selectionId, 
+                        account=account
+                    )
+                    
                 else:
-                    SurveyAnswer.objects.create(survey_question_id=question, survey_selection_id=selectionId)
+                    SurveyAnswer.objects.create(
+                        survey_question_id=question, 
+                        survey_selection_id=selectionId
+                    )
             return True
+        
         except Exception as e :
             print('checkbox answer 저장 과정에서 오류 발생!: ', e)
             return False
 
     def getTextAnswersByQuestionId(self, questionId):
-        textAnswers = (SurveyAnswer.objects.filter(survey_question_id=questionId).order_by('id').values_list('answer'))
+        textAnswers = (
+            SurveyAnswer.objects.filter(
+                survey_question_id=questionId).order_by(
+                    'id').values_list('answer')
+        )
         listTextAnswers = []
         for text in textAnswers:
             listTextAnswers.append(text[0])
+
         return listTextAnswers
 
     def getSelectionAnswersByQuestionId(self, questionId):
-        selectionAnswers = (SurveyAnswer.objects.filter(survey_question_id=questionId)
-                            .order_by('id').values_list('survey_selection_id'))
+        selectionAnswers = (
+            SurveyAnswer.objects.filter(
+                survey_question_id=questionId).order_by(
+                    'id').values_list('survey_selection_id'))
 
         listSelectionAnswers = []
         for s in selectionAnswers :

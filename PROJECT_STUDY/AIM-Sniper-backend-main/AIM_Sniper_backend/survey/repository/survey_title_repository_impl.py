@@ -19,7 +19,10 @@ class SurveyTitleRepositoryImpl(SurveyTitleRepository):
 
     def registerTitle(self, survey, surveyTitle):
         try:
-            SurveyTitle.objects.create(survey_id=survey, title=surveyTitle)
+            SurveyTitle.objects.create(
+                survey_id=survey, 
+                title=surveyTitle
+            )
             return True
 
         except Exception as e:
@@ -28,7 +31,13 @@ class SurveyTitleRepositoryImpl(SurveyTitleRepository):
 
     def getAllTitles(self):
         surveyTitleAll = SurveyTitle.objects.all().order_by('survey_id')
-        surveyTitleList = [{'surveyId': survey.survey_id.id, 'surveyTitle': survey.title} for survey in surveyTitleAll]
+        surveyTitleList = [
+            {
+                'surveyId': survey.survey_id.id, 
+                'surveyTitle': survey.title
+            }
+              for survey in surveyTitleAll
+        ]
         return surveyTitleList
 
     def getTitleBySurveyId(self, surveyId):

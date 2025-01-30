@@ -15,10 +15,15 @@ class SurveyView(viewsets.ViewSet):
         surveyId = request.data.get('surveyId')
         surveyTitle = request.data.get('surveyTitle')
         surveyDescription = request.data.get('surveyDescription')
-        print(f'surveyId : {surveyId}, surveyTitle: {surveyTitle}, surveyDescription: {surveyDescription}')
+        print(f'surveyId : {surveyId}, 
+              surveyTitle: {surveyTitle}, 
+              surveyDescription: {surveyDescription}'
+        )
 
         survey = self.surveyService.getSurveyBySurveyId(surveyId)
-        result = self.surveyService.registerTitleDescription(survey, surveyTitle, surveyDescription)
+        result = self.surveyService.registerTitleDescription(
+            survey, surveyTitle, surveyDescription
+        )
         return Response(result, status=status.HTTP_200_OK)
 
 
@@ -28,10 +33,20 @@ class SurveyView(viewsets.ViewSet):
         questionType = request.data.get('questionType')
         essential = request.data.get('isEssential') == 'true'
         images = request.FILES.getlist('images')
-        print('surveyId: ', surveyId, 'questionTitle: ', questionTitle, 'questionType: ', questionType,
-              'essential: ', essential, 'images: ', images)
+        print('surveyId: ', surveyId, 
+              'questionTitle: ', questionTitle, 
+              'questionType: ', questionType,
+              'essential: ', essential, 
+              'images: ', images
+        )
         survey = self.surveyService.getSurveyBySurveyId(surveyId)
-        result = self.surveyService.registerQuestion(survey, questionTitle, questionType, essential, images)
+        result = self.surveyService.registerQuestion(
+            survey, 
+            questionTitle, 
+            questionType, 
+            essential, 
+            images
+        )
         return Response(result, status=status.HTTP_200_OK)
 
 
@@ -50,7 +65,10 @@ class SurveyView(viewsets.ViewSet):
         for survey, random in zip(surveyTitleList, randomStringList):
             combinedItem = {**survey, **random}
             combinedList.append(combinedItem)
-        return Response({'surveyTitleList': combinedList}, status=status.HTTP_200_OK)
+        return Response(
+            {'surveyTitleList': combinedList}, 
+            status=status.HTTP_200_OK
+        )
 
     def readSurveyForm(self, request, randomString=None):
         surveyId = self.surveyService.getSurveyIdByRandomString(randomString)
@@ -76,6 +94,7 @@ class SurveyView(viewsets.ViewSet):
             surveyId = self.surveyService.getRecentSurvey()
             data = self.surveyService.getRandomstringBySurveyId(surveyId)
             return Response(data=data,status=status.HTTP_200_OK)
+        
         except Exception as e:
             print('randomString 가져오는 중 문제 발생 : ', e)
             return Response(False,status=status.HTTP_400_BAD_REQUEST)

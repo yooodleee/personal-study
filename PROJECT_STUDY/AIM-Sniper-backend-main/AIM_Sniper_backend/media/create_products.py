@@ -3,7 +3,8 @@ import os
 from company_report.entity.company_data_total import CompanyDataTotal
 from company_report.entity.models import CompanyReport
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "AIM_Sniper_backend.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", 
+                      "AIM_Sniper_backend.settings")
 
 import random
 
@@ -19,7 +20,8 @@ def create_product(path):
     productName = path.split(".png")[0]
     productPrice = random.choice(PRICE)
     productImage = path
-    content = CompanyDataTotal.objects.filter(company_name=productName).values('business_summary')
+    content = CompanyDataTotal.objects.filter(
+        company_name=productName).values('business_summary')
     print(productName,content)
 
     CompanyReport.objects.create(

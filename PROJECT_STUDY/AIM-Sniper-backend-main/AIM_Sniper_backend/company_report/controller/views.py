@@ -21,25 +21,50 @@ class CompanyReportView(viewsets.ViewSet):
 
     def register(self, request):
         try:
+            # TitleImage, ReportName, ReportPrice, ReportCategory, content
+            # 각각을 등록
             data = request.data
-            companyReportTitleImage = request.FILES.get('companyReportTitleImage')
+            companyReportTitleImage = request.FILES.get(
+                'companyReportTitleImage'
+            )
             companyReportName = data.get('companyReportName')
             companyReportPrice = data.get('companyReportPrice')
             companyReportCategory = data.get('companyReportCategory')
             content = data.get('content')
 
-            if not all([companyReportName, companyReportPrice, companyReportCategory,content, companyReportTitleImage]):
-                return Response({'error': '모든 내용을 채워주세요!'},
-                                status=status.HTTP_400_BAD_REQUEST)
+            # 5개의 정보 중 하나라도 누락되었다면-> 모든 내용을 채워주세요!
+            if not all(
+                [
+                    companyReportName, 
+                    companyReportPrice, 
+                    companyReportCategory,
+                    content, 
+                    companyReportTitleImage
+                ]
+            ):
+                return Response(
+                    {'error': '모든 내용을 채워주세요!'},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
 
-            self.companyReportService.createCompanyReport(companyReportName, companyReportPrice, companyReportCategory,content, companyReportTitleImage)
+            # companyReportService에서 CompanyReport를 새로 생성
+            self.companyReportService.createCompanyReport(
+                companyReportName, 
+                companyReportPrice, 
+                companyReportCategory,
+                content, 
+                companyReportTitleImage
+            )
 
             serializer = CompanyReportSerializer(data=request.data)
             return Response(status=status.HTTP_200_OK)
 
         except Exception as e:
             print('상품 등록 과정 중 문제 발생:', e)
-            return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {'error': str(e)}, 
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
     def readCompanyReport(self, request, pk=None):
         companyReport = self.companyReportService.readCompanyReport(pk)
@@ -53,18 +78,30 @@ class CompanyReportView(viewsets.ViewSet):
     def modifyCompanyReport(self, request, pk=None):
         companyReport = self.companyReportService.readCompanyReport(pk)
         # print(f"request Data: {request.data}")
-        serializer = CompanyReportSerializer(companyReport, data=request.data, partial=True)
+        serializer = CompanyReportSerializer(
+            companyReport, 
+            data=request.data, 
+            partial=True
+        )
         # print(f"Request Data: {request.data}")  # 이 부분에서 front에서 전달된 데이터를 확인
         if serializer.is_valid():
-            # print(f"Validated Data: {serializer.validated_data}")  # 검증된 데이터를 출력하여 확인
-            updateCompanyReport = self.companyReportService.updateCompanyReport(pk, serializer.validated_data)
+            # print(f"Validated Data: {serializer.validated_data}")  
+            # # 검증된 데이터를 출력하여 확인
+            updateCompanyReport = \
+                self.companyReportService.updateCompanyReport(
+                    pk, serializer.validated_data
+                )
             return Response(CompanyReportSerializer(updateCompanyReport).data)
 
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(
+            serializer.errors, 
+            status=status.HTTP_400_BAD_REQUEST
+        )
 
     def readCompanyReportFinance(self, request):
         companyName = request.data.get('companyReportName')
-        companyReportFinance = self.companyReportService.readCompanyReportFinance(companyName)
+        companyReportFinance = \
+            self.companyReportService.readCompanyReportFinance(companyName)
 
         # companyReportFinance는 (리스트2021, 리스트2022, 리스트2023) 형태입니다.
         # 이를 하나의 리스트로 합쳐서 반환합니다.
@@ -78,7 +115,8 @@ class CompanyReportView(viewsets.ViewSet):
 
     def readCompanyReportInfo(self, request):
         companyName = request.data.get('companyReportName')
-        companyReportInfo = self.companyReportService.readCompanyReportInfo(companyName)
+        companyReportInfo = \
+            self.companyReportService.readCompanyReportInfo(companyName)
         return Response(companyReportInfo)  # JsonResponse가 자동으로 처리해줍니다.
 
     def readTopClickedCompany(self, request):
@@ -90,6 +128,7 @@ class CompanyReportView(viewsets.ViewSet):
     def updateReport(self, request):
         if request.data.get('aiResult'):
             data = request.data['aiResult']
+
         else:
             base_dir = os.path.dirname(os.path.abspath(__file__))
             json_path = os.path.join(base_dir, "../../assets/report.json")
@@ -99,8 +138,12 @@ class CompanyReportView(viewsets.ViewSet):
         try:
             self.companyReportService.updateCompanyReportDB(data)
             return Response(status=status.HTTP_200_OK)
+        
         except FileNotFoundError:
-            return Response({"error": "report.json 파일을 찾을 수 없습니다."}, status=status.HTTP_404_NOT_FOUND)
+            return Response(
+                {"error": "report.json 파일을 찾을 수 없습니다."}, 
+                status=status.HTTP_404_NOT_FOUND
+            )
 
     def saveKeyword(self, request):
         self.companyReportService.saveKeyword()

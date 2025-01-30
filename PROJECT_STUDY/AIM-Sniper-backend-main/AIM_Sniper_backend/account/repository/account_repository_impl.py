@@ -46,13 +46,13 @@ class AccountRepositoryImpl(AccountRepository):
     def withdrawAccount(self, account, withdrawReason):
         role_type = AccountRoleType.objects.get(id=account.roleType_id)
 
-        if role_type.roleType == "NORMAL":
-            role_type.roleType = "BLACKLIST"
+        if role_type.roleType == "NORMAL":  # 일반 사용자
+            role_type.roleType = "BLACKLIST"    # 블랙 리스트
             role_type.save()
 
-            account.roleType = role_type
+            account.roleType = role_type    # 일반 사용자와 블랙 리스트의 정보를 인출
             account.withdraw_reason = withdrawReason
-            account.withdraw_at = timezone.now()
+            account.withdraw_at = timezone.now()    # 인출한 날짜
             account.save()
             print('계정 탈퇴 완료')
         else:

@@ -46,7 +46,16 @@ class ProfileRepositoryImpl(ProfileRepository):
             print(f"nickname 중복 검사 중 에러 발생: {e}")
             return None
 
-    def create(self, nickname, email, password, salt, gender, birthyear, account):
+    def create(
+            self, 
+            nickname, 
+            email, 
+            password, 
+            salt, 
+            gender, 
+            birthyear, 
+            account):
+        
         genderType = ProfileGenderType.objects.get_or_create(gender_type=gender)
         gender = genderType[0]
         profile = Profile.objects.create(
@@ -59,6 +68,7 @@ class ProfileRepositoryImpl(ProfileRepository):
             account=account
         )
         return profile
+    
     def findByPassword(self, email,password):
         try:
             email = Profile.objects.get(email=email)

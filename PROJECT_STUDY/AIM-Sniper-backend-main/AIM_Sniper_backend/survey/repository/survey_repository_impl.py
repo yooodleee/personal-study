@@ -32,12 +32,16 @@ class SurveyRepositoryImpl(SurveyRepository):
 
     def getAllRandomString(self):
         allSurvey = Survey.objects.all()
-        randomStringList = [{'randomString': survey.survey } for survey in allSurvey]
+        randomStringList = [
+            {'randomString': survey.survey } 
+            for survey in allSurvey
+        ]
         return randomStringList
 
     def findSurveyIdByRandomString(self, randomString):
         survey = Survey.objects.get(survey=randomString)
         return survey.id
+    
     def findRandomStringBySurveyId(self, surveyId):
         survey = Survey.objects.get(id=surveyId)
         return survey.survey

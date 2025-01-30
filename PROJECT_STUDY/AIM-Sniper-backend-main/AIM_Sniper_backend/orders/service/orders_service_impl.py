@@ -11,9 +11,12 @@ class OrdersServiceImpl(OrdersService):
         if cls.__instance is None:
             cls.__instance = super().__new__(cls)
 
-            cls.__instance.__ordersRepository = OrdersRepositoryImpl.getInstance()
-            cls.__instance.__ordersItemRepository = OrdersItemRepositoryImpl.getInstance()
-            cls.__instance.__cartItemRepository = CartItemRepositoryImpl.getInstance()
+            cls.__instance.__ordersRepository = \
+                OrdersRepositoryImpl.getInstance()
+            cls.__instance.__ordersItemRepository = \
+                OrdersItemRepositoryImpl.getInstance()
+            cls.__instance.__cartItemRepository = \
+                CartItemRepositoryImpl.getInstance()
 
         return cls.__instance
 
@@ -29,7 +32,9 @@ class OrdersServiceImpl(OrdersService):
             orders = self.__ordersRepository.create(account)
 
             for item in orderItemList:
-                cartItem = self.__cartItemRepository.findById(item['cartItemId'])
+                cartItem = self.__cartItemRepository.findById(
+                    item['cartItemId']
+                )
                 self.__ordersItemRepository.create(
                     orders,
                     cartItem.product,
@@ -37,6 +42,7 @@ class OrdersServiceImpl(OrdersService):
                 )
 
             return orders.id
+        
         except Exception as e:
             print('Error creating order:', e)
             raise e
@@ -51,6 +57,7 @@ class OrdersServiceImpl(OrdersService):
             )
 
             return orders.id
+        
         except Exception as e:
             print('Error creating order:', e)
             raise e

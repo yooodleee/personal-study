@@ -9,7 +9,8 @@ class CompanyReportServiceImpl(CompanyReportService):
     def __new__(cls):
         if cls.__instance is None:
             cls.__instance = super().__new__(cls)
-            cls.__instance.__companyReportRepository = CompanyReportRepositoryImpl.getInstance()
+            cls.__instance.__companyReportRepository = \
+                CompanyReportRepositoryImpl.getInstance()
 
         return cls.__instance
 
@@ -23,24 +24,63 @@ class CompanyReportServiceImpl(CompanyReportService):
     def list(self):
         return self.__companyReportRepository.list()
 
-    def createCompanyReport(self, companyReportName, companyReportPrice, companyReportCategory, content, companyReportTitleImage):
-        return self.__companyReportRepository.create(companyReportName, companyReportPrice, companyReportCategory,content, companyReportTitleImage)
+    def createCompanyReport(
+            self, 
+            companyReportName, 
+            companyReportPrice, 
+            companyReportCategory, 
+            content, 
+            companyReportTitleImage
+        ):
+
+        # companyReportRepository에 새로운 객체 생성
+        return self.__companyReportRepository.create(
+            companyReportName, 
+            companyReportPrice, 
+            companyReportCategory,
+            content, 
+            companyReportTitleImage
+        )
 
     def readCompanyReport(self, companyReportId):
-        return self.__companyReportRepository.findByCompanyReportId(companyReportId)
+        # CompanyReport를 companyReportId로 조회해 해당 내용 read
+        return self.__companyReportRepository.findByCompanyReportId(
+            companyReportId
+        )
 
     def deleteCompanyReport(self, companyReportId):
-        return self.__companyReportRepository.deleteByCompanyReportId(companyReportId)
+        # CompanyReport를 comapnyReportId로 조회해 해당 내용 delete
+        return self.__companyReportRepository.deleteByCompanyReportId(
+            companyReportId
+        )
 
-    def updateCompanyReport(self, companyReportId, companyReportData):
-        companyReport = self.__companyReportRepository.findByCompanyReportId(companyReportId)
-        return self.__companyReportRepository.update(companyReport,companyReportData)
+    def updateCompanyReport(
+            self, 
+            companyReportId, 
+            companyReportData
+        ):
+
+        # companyReportRepository를 companyReportId로 조회해 
+        # companyReport, companyReportData 갱신
+        companyReport = self.__companyReportRepository.findByCompanyReportId(
+            companyReportId
+        )
+        return self.__companyReportRepository.update(
+            companyReport,
+            companyReportData
+        )
 
     def readCompanyReportFinance(self,companyReportName):
-        return self.__companyReportRepository.readCompanyReportFinance(companyReportName)
+        # companyReportRepository를 companyReportName에 해당하는 Finance를 read
+        return self.__companyReportRepository.readCompanyReportFinance(
+            companyReportName
+        )
 
     def readCompanyReportInfo(self, companyReportName):
-        return self.__companyReportRepository.readCompanyReportInfo(companyReportName)
+        # companyReportRepository를 companyReportName에 대항하는 Info를 read
+        return self.__companyReportRepository.readCompanyReportInfo(
+            companyReportName
+        )
 
     def readTopNCompany(self, topN):
         return self.__companyReportRepository.readTopNCompany(topN)

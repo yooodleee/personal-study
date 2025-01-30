@@ -17,7 +17,8 @@ class ManagementRepositoryImpl(ManagementRepository):
     def __new__(cls):
         if cls.__instance is None:
             cls.__instance = super().__new__(cls)
-            cls.__instance.__profileRepository = ProfileRepositoryImpl.getInstance()
+            cls.__instance.__profileRepository = \
+                ProfileRepositoryImpl.getInstance()
         return cls.__instance
 
     @classmethod
@@ -47,6 +48,7 @@ class ManagementRepositoryImpl(ManagementRepository):
         return userList
 
     def grantRoleType(self, email):
+        # to ADMIN role type
         profile = self.__profileRepository.findByEmail(email)
         admin_role = AccountRoleType.objects.get(roleType='ADMIN')
         profile.account.roleType = admin_role
@@ -55,6 +57,7 @@ class ManagementRepositoryImpl(ManagementRepository):
 
 
     def revokeRoleType(self, email):
+        # to NORMAL role type
         profile = self.__profileRepository.findByEmail(email)
         NORMAL = AccountRoleType.objects.get(roleType='NORMAL')
         profile.account.roleType = NORMAL
@@ -83,21 +86,32 @@ class ManagementRepositoryImpl(ManagementRepository):
     def userLogData(self):
         account = Account.objects.all()
         today = date.today()  # 오늘의 날짜
-        start_date = datetime.combine(today - timedelta(days=7), datetime.min.time())  # 시작 시간을 오늘의 자정으로 설정
-        end_date = datetime.combine(today + timedelta(days=7), datetime.min.time())  # 종료 시간을 오늘에서 1주일 후의 자정으로 설정
+        start_date = datetime.combine(
+            today - timedelta(days=7), 
+            datetime.min.time()
+        )  # 시작 시간을 오늘의 자정으로 설정
+        end_date = datetime.combine(
+            today + timedelta(days=7), 
+            datetime.min.time()
+        )  # 종료 시간을 오늘에서 1주일 후의 자정으로 설정
 
         # 로그인 기록에서 계정 수 필터링
-        filtered_history = LoginHistory.objects.filter(login_at__range=(start_date, end_date)).values(
-            'account_id').distinct().count()
+        filtered_history = LoginHistory.objects.filter(
+            login_at__range=(start_date, end_date)).values(
+                'account_id').distinct().count()
 
         # 주문 수 필터링
-        orders = Orders.objects.filter(createdDate__range=(start_date, end_date)).values(
-            'account_id').distinct().count()
+        orders = Orders.objects.filter(
+            createdDate__range=(start_date, end_date)).values(
+                'account_id').distinct().count()
 
         # 두 번 이상 주문한 계정 수 필터링
         two_or_more_orders = Orders.objects.filter(
-            createdDate__range=(start_date, end_date)
-        ).values('account_id').annotate(order_count=Count('id')).filter(order_count__gte=2).count()
+            createdDate__range=(
+                start_date, end_date)).values(
+                    'account_id').annotate(
+                        order_count=Count('id')).filter(
+                            order_count__gte=2).count()
 
         # 각 통계 값 계산
         userCount = len(account)

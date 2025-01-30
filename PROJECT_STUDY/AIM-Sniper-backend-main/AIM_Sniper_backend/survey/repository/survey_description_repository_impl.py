@@ -20,7 +20,10 @@ class SurveyDescriptionRepositoryImpl(SurveyDescriptionRepository):
 
     def registerDescription(self, survey, surveyDescription):
         try:
-            SurveyDescription.objects.create(survey_id=survey, description=surveyDescription)
+            SurveyDescription.objects.create(
+                survey_id=survey, 
+                description=surveyDescription
+            )
             return True
 
         except Exception as e:
