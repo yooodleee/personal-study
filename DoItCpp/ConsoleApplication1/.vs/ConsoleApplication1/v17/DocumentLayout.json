@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A9595D1-DEF9-4637-9184-DCD98C9C985D}|ConsoleApplication1\\ConsoleApplication1.vcxproj|C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\ConsoleApplication1\\ch02_std_string.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4A9595D1-DEF9-4637-9184-DCD98C9C985D}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\ch02_std_string.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4A9595D1-DEF9-4637-9184-DCD98C9C985D}|ConsoleApplication1\\ConsoleApplication1.vcxproj|C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\ConsoleApplication1\\ch02_user_defined_literals.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A9595D1-DEF9-4637-9184-DCD98C9C985D}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\ch02_user_defined_literals.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ch02_std_string.cpp",
-              "DocumentMoniker": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\ConsoleApplication1\\ch02_std_string.cpp",
-              "RelativeDocumentMoniker": "ConsoleApplication1\\ch02_std_string.cpp",
-              "ToolTip": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\ConsoleApplication1\\ch02_std_string.cpp*",
-              "RelativeToolTip": "ConsoleApplication1\\ch02_std_string.cpp*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Title": "ch02_user_defined_literals.cpp",
+              "DocumentMoniker": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\ConsoleApplication1\\ch02_user_defined_literals.cpp",
+              "RelativeDocumentMoniker": "ConsoleApplication1\\ch02_user_defined_literals.cpp",
+              "ToolTip": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\ConsoleApplication1\\ch02_user_defined_literals.cpp*",
+              "RelativeToolTip": "ConsoleApplication1\\ch02_user_defined_literals.cpp*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-04T08:43:42.499Z",
+              "WhenOpened": "2025-02-04T08:48:29.751Z",
               "EditorCaption": ""
             }
           ]
