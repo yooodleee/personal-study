@@ -1,2 +1,4 @@
-﻿  ch02_bitwise_XOR.cpp
+﻿  ch02_bitwise_shift.cpp
+C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\DoItCpp\ConsoleApplication1\ConsoleApplication1\ch02_bitwise_shift.cpp(13,12): warning C4293: '>>': 시프트 횟수가 음수이거나 너무 큽니다. 정의되지 않은 동작입니다.
+C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\DoItCpp\ConsoleApplication1\ConsoleApplication1\ch02_bitwise_shift.cpp(14,12): warning C4293: '<<': 시프트 횟수가 음수이거나 너무 큽니다. 정의되지 않은 동작입니다.
   ConsoleApplication1.vcxproj -> C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\DoItCpp\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
