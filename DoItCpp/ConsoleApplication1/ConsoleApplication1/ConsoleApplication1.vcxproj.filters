@@ -42,5 +42,8 @@
     <ClCompile Include="ch02_precision_floating_point.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="ch02_localVariable.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
