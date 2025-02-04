@@ -135,7 +135,10 @@
     <ClCompile Include="ch02_bitwise_NOT.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="ch02_bitwise_OR.cpp" />
+    <ClCompile Include="ch02_bitwise_OR.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="ch02_bitwise_XOR.cpp" />
     <ClCompile Include="ch02_boolExample.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
