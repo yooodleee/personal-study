@@ -22,3 +22,10 @@ int main() {
 
 	return 0;
 }
+
+/*
+Result_1 : 21
+Result_2 : 56
+Result_3 : 21
+Result 4 : 21
+*/
