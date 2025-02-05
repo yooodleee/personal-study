@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4A9595D1-DEF9-4637-9184-DCD98C9C985D}|ConsoleApplication1\\ConsoleApplication1.vcxproj|C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\ConsoleApplication1\\ch03_variable_and_memory_address.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A9595D1-DEF9-4637-9184-DCD98C9C985D}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\ch03_variable_and_memory_address.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ch03_variable_and_memory_address.cpp",
+              "DocumentMoniker": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\ConsoleApplication1\\ch03_variable_and_memory_address.cpp",
+              "RelativeDocumentMoniker": "ConsoleApplication1\\ch03_variable_and_memory_address.cpp",
+              "ToolTip": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\ConsoleApplication1\\ch03_variable_and_memory_address.cpp*",
+              "RelativeToolTip": "ConsoleApplication1\\ch03_variable_and_memory_address.cpp*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-05T01:12:48.504Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
