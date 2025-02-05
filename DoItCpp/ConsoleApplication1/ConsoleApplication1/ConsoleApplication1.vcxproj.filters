@@ -129,5 +129,8 @@
     <ClCompile Include="ch03_arguments_pointer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="ch03_arguments_array.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
