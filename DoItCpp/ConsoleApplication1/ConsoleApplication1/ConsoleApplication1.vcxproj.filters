@@ -114,5 +114,8 @@
     <ClCompile Include="ch03_new_and_delete.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="ch03_new_delete_array.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
