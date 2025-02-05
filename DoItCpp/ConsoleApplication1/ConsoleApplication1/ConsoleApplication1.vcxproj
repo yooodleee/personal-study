@@ -210,7 +210,10 @@
     <ClCompile Include="ch03_array_pointer.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="ch03_array_pointer_3.cpp" />
+    <ClCompile Include="ch03_array_pointer_3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="ch03_new_and_delete.cpp" />
     <ClCompile Include="ch03_pointer_to_pointer.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
