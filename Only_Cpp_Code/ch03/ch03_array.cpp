@@ -17,5 +17,3 @@ int main() {
 
 	return 0;
 }
-
-// Today's Lotto : 1, 8, 16, 28, 37, 45
