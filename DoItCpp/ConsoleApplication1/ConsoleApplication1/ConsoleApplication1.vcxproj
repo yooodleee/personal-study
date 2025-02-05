@@ -216,6 +216,7 @@
     <ClCompile Include="ch03_dynamic_memory_bakery.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="ch03_function.cpp" />
     <ClCompile Include="ch03_new_and_delete.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>

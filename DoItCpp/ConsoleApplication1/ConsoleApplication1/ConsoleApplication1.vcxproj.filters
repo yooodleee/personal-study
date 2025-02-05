@@ -120,5 +120,8 @@
     <ClCompile Include="ch03_dynamic_memory_bakery.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="ch03_function.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
