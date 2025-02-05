@@ -27,3 +27,19 @@ int main() {
 
 	return 0;
 }
+
+/*
+lotto[0] Address: 000000498A9BF830
+lotto[1] Address: 000000498A9BF834
+lotto[2] Address: 000000498A9BF838
+lotto[3] Address: 000000498A9BF83C
+lotto[4] Address: 000000498A9BF840
+lotto[5] Address: 000000498A9BF844
+
+(lotto + 0) Address: 000000498A9BF830
+(lotto + 1) Address: 000000498A9BF834
+(lotto + 2) Address: 000000498A9BF838
+(lotto + 3) Address: 000000498A9BF83C
+(lotto + 4) Address: 000000498A9BF840
+(lotto + 5) Address: 000000498A9BF844
+*/
