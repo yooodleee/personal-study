@@ -87,7 +87,10 @@
     <ClCompile Include="ch03_variable_and_memory_address.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="pointer_variable_and_initalize.cpp">
+    <ClCompile Include="ch03_pointer_variable_and_initalize.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ch03_pointer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
