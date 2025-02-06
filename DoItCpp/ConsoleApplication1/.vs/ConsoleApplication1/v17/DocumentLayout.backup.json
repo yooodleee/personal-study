@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A9595D1-DEF9-4637-9184-DCD98C9C985D}|ConsoleApplication1\\ConsoleApplication1.vcxproj|C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\ConsoleApplication1\\ch04_switch_2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4A9595D1-DEF9-4637-9184-DCD98C9C985D}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\ch04_switch_2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4A9595D1-DEF9-4637-9184-DCD98C9C985D}|ConsoleApplication1\\ConsoleApplication1.vcxproj|C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\ConsoleApplication1\\ch04_while.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A9595D1-DEF9-4637-9184-DCD98C9C985D}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\ch04_while.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ch04_switch_2.cpp",
-              "DocumentMoniker": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\ConsoleApplication1\\ch04_switch_2.cpp",
-              "RelativeDocumentMoniker": "ConsoleApplication1\\ch04_switch_2.cpp",
-              "ToolTip": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\ConsoleApplication1\\ch04_switch_2.cpp",
-              "RelativeToolTip": "ConsoleApplication1\\ch04_switch_2.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAKAAAAAAAAAA==",
+              "Title": "ch04_while.cpp",
+              "DocumentMoniker": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\ConsoleApplication1\\ch04_while.cpp",
+              "RelativeDocumentMoniker": "ConsoleApplication1\\ch04_while.cpp",
+              "ToolTip": "C:\\Users\\dhals_zn0ga5j\\python_seed\\personal_study\\personal-study\\DoItCpp\\ConsoleApplication1\\ConsoleApplication1\\ch04_while.cpp*",
+              "RelativeToolTip": "ConsoleApplication1\\ch04_while.cpp*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-06T00:25:28.827Z",
+              "WhenOpened": "2025-02-06T00:29:47.349Z",
               "EditorCaption": ""
             }
           ]
