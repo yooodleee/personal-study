@@ -1,2 +1,8 @@
-﻿  ch04_if_2.cpp
+﻿  ch04_switch_1.cpp
+C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\DoItCpp\ConsoleApplication1\ConsoleApplication1\ch04_switch_1.cpp(34,2): warning C4065: switch문에 'default'가 있으나 'case' 레이블이 없습니다.
+C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\DoItCpp\ConsoleApplication1\ConsoleApplication1\ch04_switch_1.cpp(16,2): warning C4102: 'case1': 참조되지 않은 레이블입니다.
+C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\DoItCpp\ConsoleApplication1\ConsoleApplication1\ch04_switch_1.cpp(19,2): warning C4102: 'case2': 참조되지 않은 레이블입니다.
+C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\DoItCpp\ConsoleApplication1\ConsoleApplication1\ch04_switch_1.cpp(22,2): warning C4102: 'case3': 참조되지 않은 레이블입니다.
+C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\DoItCpp\ConsoleApplication1\ConsoleApplication1\ch04_switch_1.cpp(25,2): warning C4102: 'case4': 참조되지 않은 레이블입니다.
+C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\DoItCpp\ConsoleApplication1\ConsoleApplication1\ch04_switch_1.cpp(28,2): warning C4102: 'case5': 참조되지 않은 레이블입니다.
   ConsoleApplication1.vcxproj -> C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\DoItCpp\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
