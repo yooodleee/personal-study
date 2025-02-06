@@ -177,5 +177,8 @@
     <ClCompile Include="ch04_while_vs_dowhile.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="ch04_for.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
