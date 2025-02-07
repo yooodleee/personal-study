@@ -294,7 +294,10 @@
     <ClCompile Include="ch04_while_vs_dowhile.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="ch05_stack_unwinding_1.cpp" />
+    <ClCompile Include="ch05_stack_unwinding_1.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="ch05_stack_unwinding_2.cpp" />
     <ClCompile Include="ch05_try_throw_catch_1.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
