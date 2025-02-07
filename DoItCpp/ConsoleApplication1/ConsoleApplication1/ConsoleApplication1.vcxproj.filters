@@ -186,5 +186,8 @@
     <ClCompile Include="ch05_try_trhow_catch_2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="ch05_stack_unwinding_1.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
