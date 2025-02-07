@@ -192,5 +192,8 @@
     <ClCompile Include="ch05_stack_unwinding_2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="ch05_assert.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
