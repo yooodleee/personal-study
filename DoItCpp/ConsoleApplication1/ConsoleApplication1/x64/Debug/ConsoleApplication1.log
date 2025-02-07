@@ -1,6 +1,2 @@
-﻿  ch05_noexcept.cpp
-C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\DoItCpp\ConsoleApplication1\ConsoleApplication1\ch05_noexcept.cpp(17,2): warning C4297: 'fake_noexcept': 함수는 예외를 Throw하지 않도록 지정되었으나 예외를 Throw했습니다.
-      C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\DoItCpp\ConsoleApplication1\ConsoleApplication1\ch05_noexcept.cpp(17,2):
-      함수에서 __declspec(nothrow), throw(), noexcept(true) 또는 noexcept를 지정했습니다.
-  
+﻿  ch05_set_terminate.cpp
   ConsoleApplication1.vcxproj -> C:\Users\dhals_zn0ga5j\python_seed\personal_study\personal-study\DoItCpp\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
