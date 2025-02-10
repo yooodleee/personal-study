@@ -1,0 +1,41 @@
+name: CI (Continuous Integration)
+
+on:
+  push:
+    branches: ["main"]
+    
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: Create .env file for CI
+        run: |
+          echo "HOST=${{ secrets.HOST }}" >> .env
+          echo "PORT=${{ secrets.PORT }}" >> .env
+          echo "FASTAPI_PORT=${{ secrets.FASTAPI_PORT }}" >> .env
+          echo "MY_IP=${{ secrets.MY_IP }}" >> .env
+          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> .env
+          echo "ALLOWED_ORIGINS=${{ secrets.ALLOWED_ORIGINS }}" >> .env
+          echo "SERVER_CERTIFICATE=${{ secrets.SERVER_CERTIFICATE }}" >> .env
+          echo "SERVER_PRIVATE=${{ secrets.SERVER_PRIVATE }}" >> .env
+          echo "CLIENT_CA_CERTIFICATE=${{ secrets.CLIENT_CA_CERTIFICATE }}" >> .env
+
+      - name: send FASTAPI_FINISH_TRIGGER
+        run: |
+          curl -S -X POST https://api.github.com/repos/${{ github.repository }}/dispatches \
+              -H 'Accept: application/vnd.github.v3+json' \
+              -u ${{ secrets.GHCR_TOKEN }} \
+              -d '{"event_type": "FASTAPI_FINISH_TRIGGER", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
