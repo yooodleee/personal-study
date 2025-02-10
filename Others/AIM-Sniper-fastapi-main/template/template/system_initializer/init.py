@@ -2,6 +2,7 @@ from system_queue.service.system_queue_service_impl import SystemQueueServiceImp
 
 
 class SystemInitializer:
+    
     @staticmethod
     def initSystemQueueDomain():
         systemQueueService = SystemQueueServiceImpl.getInstance()
