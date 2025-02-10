@@ -1,8 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class UserDefinedQueueRepository(ABC):
-    
+class ServerSocketService(ABC):
     @abstractmethod
-    def create(self):
+    def prepareServerSocket(self):
         pass

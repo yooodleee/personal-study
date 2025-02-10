@@ -1,8 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class UserDefinedQueueRepository(ABC):
-    
+class IPCQueueRepository(ABC):
     @abstractmethod
-    def create(self):
+    def createDefault(self):
         pass
