@@ -2,6 +2,7 @@ from user_defined_queue.service.user_defined_queue_service_impl import UserDefin
 
 
 class UserDefinedInitializer:
+    
     @staticmethod
     def initUserDefinedQueueDomain():
         userDefinedQueueService = UserDefinedQueueServiceImpl.getInstance()
