@@ -267,5 +267,33 @@ C++ 언어에서 지원하는 부동 소수점 형식을 살펴보도록 한다.
 
     3) 16 byte:
         표현 범위(+-3.36 x 10^-4932 ~ +- 1.18 x 10^4932)
-        유효 자릿수(자리): 33 ~ 36  
+        유효 자릿수(자리): 33 ~ 36
+
+
+* 데이터 형식
+
+1) 정수형(integer):
+    정수를 표현하는 형식으로 int, short, long, long long 등이 있다.
+    각 형식은 저장하는 비트 수에 따라 값의 범위가 다르다.
+
+2) 부동 소수점(floating point):
+    소수점이 있는 값을 표현하는 방식으로 float, double, long double 등이 있다.
+    float보다 double 등이 높은 정밀도를 제공한다.
+
+3) 문자(character):
+    단일 문자를 표현하는 형식으로 char를 사용하며 작은 따옴표로 문자를 감싸 표현한다.
+
+4) 불리언(boolean):
+    참(true) 또는 거짓(false)을 표현하는 형식으로 bool을 사용하며, 조건문과 논리 연산에 주로 활용한다.
+
+5) 보이드(void):
+    함수가 어떤 값을 반환하지 않음을 나타내며, 주로 함수의 반환 타입으로 사용한다.
+
+    void func_name() {...}
+    int int_age = 25;
+    bool is_passed = True;
+    char ch_grade = 'A';
+    float float_height = 175.3f;
+    double double_height = 175.5;
+    long double long_double_height = 175.5l;
 */
