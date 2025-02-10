@@ -48,7 +48,7 @@ Uvicorn vs Hypercorn
 """
 
 import os.path
-import sys
+import sys  # 파이썬 라이브러리가 설치되어 있는 디렉터리 확인
 from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -67,9 +67,12 @@ from test.controller.test_controller import testRouter
 from user_defined_initializer.init import UserDefinedInitializer
 
 
+# sys.path.append(모둘을 저장한 디렉터리) 사용하기기
 sys.path.append(
     os.path.join(os.path.dirname(__file__), '..', 'template')
 )
+
+# .., template, include, socket_server 디렉터리 사용하기기
 sys.path.append(os.path.join(
     os.path.dirname(__file__), 
     '..', 
@@ -86,9 +89,9 @@ from template.template.task_manager.manager import TaskManager
 from template.template.include.socket_server.initializer.init_domain import DomainInitializer # type: ignore
 
 
-DomainInitializer.initEachDomain()
-SystemInitializer.initSystemDomain()
-UserDefinedInitializer.initUserDefinedDomain()
+DomainInitializer.initEachDomain()  # 각 도메인 초기화
+SystemInitializer.initSystemDomain()    # 시스템 도메인 초기화
+UserDefinedInitializer.initUserDefinedDomain()  # 사용자 정의 도메인 초기화
 
 
 
@@ -96,17 +99,21 @@ app = FastAPI()
 
 load_dotenv()
 
+
+# ALLOWED_ORIGINS(환경 변수)의 값을 ,(쉼표)를 제거하고 가져옴.
 origins = os.getenv("ALLOWED_ORIGINS", "").split(",")
 
 
+# 모든 HTTP 요청에 대해 공통적으로 실행되는 코드
 app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    CORSMiddleware,             # CORSMiddleware 추가
+    allow_origins=origins,      # allow_origins 추가
+    allow_credentials=True,     # allow_credentails 추가
+    allow_methods=["*"],        # allow_methods 추가
+    allow_headers=["*"],        # allow_headers (공통된 헤더) 추가
 )
 
+# include_router -> router 객체를 등록
 app.include_router(deepLearningRouter)
 app.include_router(diceResultRouter)
 
@@ -121,8 +128,8 @@ if __name__ == "__main__":
     colorama.init(autoreset=True)
 
     TaskManager.createSocketServer()
-    uvicorn.run(
-        app, 
-        host=os.getenv('HOST'), 
-        port=int(os.getenv('FASTAPI_PORT'))
+    uvicorn.run(    # uvicorn에서 실행해줍니다.
+        app,                                    # app (실행할 파일 지정)
+        host=os.getenv('HOST'),                 # host 지정
+        port=int(os.getenv('FASTAPI_PORT'))     # port 지정
     )
