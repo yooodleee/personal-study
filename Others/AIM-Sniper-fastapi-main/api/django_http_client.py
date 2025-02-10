@@ -23,6 +23,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
+
 class DjangoHttpClient:
     """
     Http 클라이언트를 사용해서 직접 클라이언트의 입장이 된다.
@@ -37,13 +39,27 @@ class DjangoHttpClient:
     Params
     -----------------
         djangoHttpxInstace:
-            base_url: DJANGO_URL
-            timeout: 2500 초를 할당해, 시간이 초과되면 TimeoutException
+            비동기 클라이언트 객체
+            
+            base_url: DJANGO_URL에서의 환경을 가져옴.
+            timeout: TimeoutException(2500 초 초과시)
+
+    Method
+    -----------------
+        post: (bool)
+            cls: 
+                클래스 메서드(@classmethod)를 명시해 줘야 함.
+                클래스 메서드를 사용하면 cls 키워드를 사용하고, instance 메서드를 사용하면 self 사용.
+            endpoint: (str)
+                url
+            data: (dict)
+
     """
     djangoHttpxInstance = httpx.AsyncClient(
         base_url=os.getenv("DJANGO_URL"),
         timeout=2500    
     )
+
 
     @classmethod
     async def post(
@@ -78,11 +94,16 @@ class DjangoHttpClient:
             response = await cls.djangoHttpxInstance.post(url, json=data)
 
             if response.status_code == 200:
-                return True
+                return True # status_code = 200
+            
             else:
-                print(f"Failed to send to Django: {response.status_code}")
-                return False
+                print(
+                    f"Failed to send to Django: {response.status_code}"
+                )
+                return False    # status_code = error
 
         except httpx.RequestError as exc:
-            print(f"An error occurred while sending to Django: {str(exc)}")
+            print(
+                f"An error occurred while sending to Django: {str(exc)}"
+            )   # Django로 보내는 와중에 error 발생
             return False
