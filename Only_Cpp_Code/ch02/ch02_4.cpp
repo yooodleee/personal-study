@@ -151,3 +151,42 @@ C++ 언어에서 문자 리터럴은 다음처럼 5가지 요약하여 정리할
     5. UTF-32 문자:
         ex) U'a'-> std::u32string str5(U"Hello"); 
 */
+
+
+/*
+사용자 정의 리터럴
+
+기본으로 제공되는 리터럴 외에 개발자가 리터럴을 직접 정의할 수도 있다. 
+리터럴을 나타내는 접미사를 함수 이름으로 만들면 되는데, 다음처럼 사용자 정의 리터럴 연산자 operator""를 사용한다. 
+
+사용자 정의 리터럴
+    반환_타입 operator"" 리터럴_접미사(매개변수_구성)
+
+이렇게 하면 해당 접미사를 붙인 값은 사용자가 정의한 값으로 바꿔서 사용할 수 있다. 
+다음 코드는 마일(mile)과 킬로미터(killometers) 단위를 리터럴로 정의한 예이다. 
+
+    #include <iostream>
+    using namespace std;
+
+    const long double km_per_mile = 1.609344L;
+
+    long double operator"" _km(long double val)     // _km 사용자 리터럴 정의
+    {
+        return val;     // 아무런 작업 없이 그대로 반횐
+    }
+
+    long double operator"" _mi(long double val)     // _mi 사용자 리터럴 정의
+    {
+        return val *km_per_mile;        // 마일을 킬로미터로 변환하여 반환
+    }
+
+    int main()
+    {
+        long double distance_1 = 1.0_km;    // 킬로미터는 그대로 저장
+        long double distance_2 = 1.0_mi;    // 마일은 킬로미터 단위로 변환해서 저장
+
+        cout << distance_1 + distance_2 << " km" << endl;
+
+        return 0;
+    }
+*/
