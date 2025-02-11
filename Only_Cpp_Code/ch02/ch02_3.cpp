@@ -69,3 +69,136 @@ C++ 언어에서 L-value와 R-value의 구분은 변수와 표현식이 어떻�
     * 사용되는 식에서만 임시로 유효하다. 
 */
 
+/*
+형식 변환
+
+프로그래밍을 하다 보면 변수의 형식을 변경해서 사용해야 할 때가 있다. 
+이를 위해 C++ 언어에서는 '암시적 형 변환'과 '묵시적 형 변환', 이렇게 두 가지 방법의 형식 변환(type casting)을 지원한다. 
+각각을 정의하면 다음과 같다. 
+
+    * 암시적 형 변환(Implicit cast): 
+        컴파일러가 자동으로 변경
+    * 묵시적 형 변환(Explicit cast):
+        개발자가 의도적으로 직접 변경
+
+
+* 암시적 형 변환
+
+    먼저 암시적 형 변환의 예를 보겠다.
+
+    #include <iostream>
+    using namespace std;
+
+    int main()
+    {
+        float float_value = 1.5f;   // 원본 데이터는 부동 소수점 형 1.5
+
+        double double_value = float_value;  // 숫자 승격: 데이터 유실 없음
+        int int_value = float_value;        // 숫자 변환: 데이터 유실 발생
+
+        cout << "float_value" << float_value << endl;
+        cout << "double_value" << double_value << endl;
+        cout << "int_value" << int_value << endl;
+
+        return 0;
+    }
+
+    이 코드에서 컴파일러가 자동으로 형식을 변환하는 암시적 형 변환은 두 곳에서 발생한다.
+    다음 코드에서는 float 형과 같은 계열이면서 더 큰 부동소수점 자료형인 double로 변환된다.
+    이를 숫자 승격(numeric promotion)이라고 하며, 이때 데이터는 그대로 유지된다. 
+
+    숫자 승격 예(데이터 유지)
+        double double_value = float_value;
+
+    반면에 다음 코드처럼 부동 소수점에서 정수로 서로 다른 자료형으로 변환하거나, 또는 크기가 더 작은 자료형으로 변환하면
+    숫자 변환(numeric conversion)이 발생된다. 
+    이때는 데이터가 유실될 가능성이 있다. 
+    실행 결과를 보면 소수점 아래 데이터가 유실되어 정수 데이터 1만 남게 되는 것을 확인할 수 있다. 
+
+    숫자 변환 예(데이터 유실)
+        int int_value = float_value;
+
+
+    * 컴파일할 때 발생하는 결과도 꼭 살펴보자.
+
+        숫자 변환이 발생하면 컴파일러는 다음과 같은 경고(warning) 메시지로 데이터가 유실될 수 있음을 알려 준다. 
+
+        warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 유실될 수 있습니다. 
+
+        컴파일을 진행할 때 오류(error) 메시지만 해결해도 실행 파일은 만들어진다. 
+        이 때문에 경고 메시지를 무시하고 넘어가는 경우가 있다. 
+        하지만 경고 메시지를 잘 살펴보면 의도치 않은 오동작을 찾아내어 런타임 오류를 막을 수 있다. 
+        경고 메시지도 꼼꼼히 확인하는 습관을 들이는 것이 좋다. 
+
+
+    명시적 형 변환
+
+    #include <iostream>
+    using namespace std;
+
+    int main()
+    {
+        int int_a = 10;
+        int int_b = 5;
+
+        int int_avg = (int_a + int_b) / 2;
+
+        float float_avg_1 = (int_a + int_b) / 2;    // 암시적 형 변환: 데이터 유실
+        float float_avg_2 = float(int_a + int_b) / 2; // 명시적 형 변환
+
+        cout << "int_avg: " << int_avg << endl;
+        cout << "float_avg_1: " << float_avg_1 << endl;
+        cout << "float_avg_2: " << float_avg_2 << endl;
+
+        return 0;
+    }
+
+    먼저 암시적 형 변환이 발생한 곳부터 살펴보자. 
+    다음 코드는 두 정수의 평균을 구하는 식이다. 
+    소수점이 발생할 수 있으므로 결괏값을 float 형으로 받도록 했다. 
+
+    float float_avg_1 = (int_a + int_b) / 2;
+
+    그런데 결괏값(float_avg_1)을 확인해 보면 소수점 데이터가 유실된 것을 발견할 수 있다. 
+    어떻게 이런 결과가 나왔을까?
+    컴파일러는 int_a + int_b 부분을 정수형 R-value로 처리함으로써, '정수형 R-value/2'의 결과도 정수가 된 것이다. 
+    결괏값을 float형으로 구하려 했지만, 이미 정수끼리 나누기 연산에서 소수점 데이터가 사라져 의도치 않은 결과가 나온 것이다. 
+
+    이러한 문제를 해결하기 위해 개발자가 의도적으로 원하는 시점에 형식을 변환할 수 있도록 하는 것이 '명시적 형 변환'이다. 
+    이번에는 명시적 형 변환으로 원하는 값이 나온 코드를 살펴보자. 
+
+    float float_avg_2 = float(int_a + int_b) / 2;
+
+    int_a + int_b 부분을 float 형 R-value로 변환할 것을 명시적으로 표기함으로써 이후의 연산은 모두 float형으로 처리된다. 
+    따라서 데이터가 유실되지 않고 온전한 결괏값을 얻을 수 있다. 
+
+    C++ 언어에서는 float() 형태뿐만 아니라 (float)처럼 C 언어 방식의 명시적 형 변환도 지원한다. 
+
+    float float_avg_2 = (float)(int_a + int_b) / 2;
+
+    앞에서 설명한 명시적 형 변환 외에 C++ 언어에서는 static_cast, const_cast, dynamic_cast, reinterpart_cast 등
+    다양한 방법으로 명시적 형 변환을 지원한다. 
+    다음 표에는 아직 배우지 않은 개념도 있으므로 참고도 알아두도록 하자. 
+
+    
+    <명시적 형 변환 방법> 
+        1) static_cast <변환_형식>(변환_대상)
+            논리적으로 변경할 수 있는 형 변환 모두 가능
+            상속 관계에 있는 포인터끼리 변환도 지원
+        2) const_cast <변환_형식>(변환_대상)
+            포인터 및 레퍼런스 형식에서만 사용 가능
+            const, volatile 제거할 때 사용
+        3) reinterpret_cast <변환_형식>(변환_대상)
+            일반적인 명시적 형 변환과 동일함
+            const를 사용하는 변환 대상은 사용할 수 없음
+        4) dynamic_cast <변환_형식>(변환_대상)
+            클래스의 포인터 및 레퍼런스 변수 간의 형 변환 시 사용
+            안전한 다운캐스팅(down-casting)을 위해 사용
+
+    
+    * 명시적 형 변환이 필요한 이유는 무엇인가?
+        명시적 형 변환은 데이터 손실을 방지할 때, 변수의 범위를 초과하는 값을 적절한 범위로
+        조절할 때, 서로 다른 데이터 유형끼리 계산할 때 등 데이터 유형 간의 호환성이나 연산의
+        정확성을 유지할 목적으로 사용한다. 그러나 형 변환을 남용하면 코드를 해석하기 어렵게 
+        되므로 신중하게 사용해야 한다. 
+*/
