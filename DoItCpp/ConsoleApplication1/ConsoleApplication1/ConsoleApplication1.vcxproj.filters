@@ -201,5 +201,17 @@
     <ClCompile Include="ch05_set_terminate.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="ch06_adaptive_cruise_control.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ch06_problems_in_procedural_programming.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ch06_class.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ch06_adative_cruise_modeling.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
