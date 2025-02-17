@@ -18,7 +18,7 @@ protected:
 
 
 // 단일 상속
-class player : public character {
+class player : public character {   // 클래스를 상속받을 때 부모 클래스(character)를 하나만 지정하는 경우
 public:
     player() {};
 
