@@ -84,22 +84,6 @@ int main() {
     monster_b tutorial_monster;
     monster_c boss_monster;
 
-    cout << "몬스터 총 공격" << endl;
-    forest_monster.attack_special(player_1);
-    tutorial_monster.attack_special(player_1);
-    boss_monster.attack_special(player_1);
-
-    return 0;
-}
-
-
-int main() {
-    player player_1;
-
-    monster_a forest_monster;
-    monster_b tutorial_monster;
-    monster_c boss_monster;
-
     cout << "오버라이딩 공격" << endl;
     forest_monster.attack_special(player_1);    // 오버라이딩 함수 호출
     tutorial_monster.attack_special(player_1);  // 오버라이딩 함수 호출
