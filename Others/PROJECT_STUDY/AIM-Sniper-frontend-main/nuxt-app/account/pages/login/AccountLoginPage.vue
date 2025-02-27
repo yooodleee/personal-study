@@ -73,8 +73,8 @@
               </v-btn> -->
 
         <!-- AIm 한줄 소개 -->
-        <div class="introduction">
-          <p>기업 분석과&nbsp;AI 모의면접&nbsp;|&nbsp;취업 준비는 <b>AIM</b>에서</p>
+        <div class="introduction" style="color: black;">
+          <p>기업 분석과&nbsp;AI 모의면접&nbsp;|&nbsp;취업 준비는 <b>AIV</b>에서</p>
         </div>
 
         <!-- 영역 구분선 -->
@@ -122,7 +122,7 @@ const isPasswordCollect = ref(false);
 
 // Pinia store 상태
 const account = useAccountStore();
-const authentication = useAuthenticationStore();
+const kakaoauthentication = useKakaoAuthenticationStore();
 const googleAuthentication = useGoogleAuthenticationStore();
 const naverAuthentication = useNaverAuthenticationStore();
 
@@ -198,8 +198,8 @@ const onSubmit = async () => {
 };
 
 // Email, Password validation
-const emailRequired = v => !!v || "정확한 이메일 주소를 입력하세요.";
-const passwordRequired = v => !!v || "비밀번호는 8~20자 사이여야 합니다.";
+const emailRequired = (v) => !!v || "정확한 이메일 주소를 입력하세요.";
+const passwordRequired = (v) => !!v || "비밀번호는 8~20자 사이여야 합니다.";
 
 // 비밀번호 확인 함수
 const checkPassword = async () => {
@@ -226,7 +226,7 @@ const checkPassword = async () => {
   align-items: center;
   box-sizing: border-box;
   background-color: white;
-  background: url("@/assets/images/fixed/login_bg.png") no-repeat center center;
+  background: url("@/assets/images/fixed/login_bg6.png") no-repeat center center;
   background-size: cover;
 }
 
@@ -234,7 +234,7 @@ const checkPassword = async () => {
   height: 20vh;
   margin-bottom: 3vh;
   overflow: hidden;
-  background-image: url("@/assets/images/fixed/AIM_BI_White.png");
+  background-image: url("@/assets/images/fixed/logo.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -244,7 +244,8 @@ const checkPassword = async () => {
 .login-wrapper {
   position: relative;
   z-index: 1;
-  width: 80vh;
+  top: 70px;
+  width: 60vh;
   height: 70vh;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.08);
@@ -309,7 +310,7 @@ const checkPassword = async () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #FFEA00;
+  background-color: #ffea00;
   margin-bottom: 1vh;
   border-radius: 1.4vh;
 }
