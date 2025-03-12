@@ -1,4 +1,4 @@
-// ºñÆ® OR ¿¬»êÇÏ±â
+// ï¿½ï¿½Æ® OR ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
 
 #include <iostream>
 #include <bitset>
@@ -9,7 +9,7 @@ int main() {
 
 	int a = 13;
 	int b = 27;
-	int c = a | b;	// ºñÆ® OR ¿¬»ê
+	int c = a | b;	// ï¿½ï¿½Æ® OR ï¿½ï¿½ï¿½ï¿½
 
 	cout << "a = " << bitset<8>(a) << " : " << a << endl;
 	cout << "b = " << bitset<8>(b) << " : " << b << endl;
