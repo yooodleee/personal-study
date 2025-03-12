@@ -1,4 +1,4 @@
-// ��Ʈ OR �����ϱ�
+// 비트 OR 연산하기(|)
 
 #include <iostream>
 #include <bitset>
@@ -9,7 +9,7 @@ int main() {
 
 	int a = 13;
 	int b = 27;
-	int c = a | b;	// ��Ʈ OR ����
+	int c = a | b;	// 비트 OR 연산 
 
 	cout << "a = " << bitset<8>(a) << " : " << a << endl;
 	cout << "b = " << bitset<8>(b) << " : " << b << endl;
