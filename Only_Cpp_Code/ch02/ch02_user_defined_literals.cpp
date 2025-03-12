@@ -1,26 +1,30 @@
-// »ç¿ëÀÚ Á¤ÀÇ ¸®ÅÍ·²·Î °Å¸® ´ÜÀ§ º¯È¯ÇÏ±â
+// ì‚¬ìš©ì ì •ì˜ ë¦¬í„°ëŸ´ë¡œ ê±°ë¦¬ ë‹¨ìœ„ ë³€í™˜í•˜ê¸°
 
+/**
+ * ë¦¬í„°ëŸ´ì„ ë‚˜íƒ€ë‚´ëŠ” ì ‘ë¯¸ì‚¬ë¥¼ í•¨ìˆ˜ ì´ë¦„ìœ¼ë¡œ ë§Œë“ ë‹¤. 
+ * ì‚¬ìš©ì ì •ì˜ ë¦¬í„°ëŸ´ ì—°ì‚°ì operator"" ì‚¬ìš©ìš©
+ */
 #include <iostream>
 using namespace std;
 
 
 const long double km_per_mile = 1.609344L;
 
-long double operator"" _km(long double val)		// _km »ç¿ëÀÚ ¸®ÅÍ·² Á¤ÀÇ
+long double operator"" _km(long double val)		// _km ì‚¬ìš©ì ë¦¬í„°ëŸ´ ì •ì˜
 {
-	return val;	// ¾Æ¹«·± º¯È­ ¾øÀÌ ±×´ë·Î ¹İÈ¯
+	return val;	
 }
 
-long double operator"" _mi(long double val)		// _mi »ç¿ëÀÚ ¸®ÅÍ·² Á¤ÀÇ
+long double operator"" _mi(long double val)		// _mi ì‚¬ìš©ì ë¦¬í„°ëŸ´ ì •ì˜ 
 {
-	return val * km_per_mile;	// ¸¶ÀÏÀ» Å³·Î¹ÌÅÍ·Î º¯È¯ÇÏ¿© ¹İÈ¯
+	return val * km_per_mile;	// ë§ˆì¼(mile)ì„ í‚¬ë¡œë¯¸í„°ë¡œ ë°˜í™˜í•˜ì—¬ ë³€í™˜í™˜
 }
 
 int main() {
-	long double distance_1 = 1.0_km;	// Å³·ÎºñÅÍ´Â ±×´ë·Î ÀúÀå
-	long double distance_2 = 1.0_mi;	// ¸¶ÀÏÀº Å³·Î¹ÌÅÍ ´ÜÀ§·Î º¯È¯ÇØ¼­ ÀúÀå
+	long double distance_1 = 1.0_km;	// í‚¬ë¡œë¯¸í„°ëŠ” ê·¸ëŒ€ë¡œ ì €ì¥
+	long double distance_2 = 1.0_mi;	// ë§ˆì¼ì€ í‚¬ë¡œë¯¸í„° ë‹¨ìœ„ë¡œ ë³€í™˜í•´ì„œ ì €ì¥
 
-	cout << distance_1 + distance_2 << "km" << endl;	// Å³·Î¹ÌÅÍ·Î Ãâ·Â
+	cout << distance_1 + distance_2 << "km" << endl;	// 
 
 	return 0;
 }
