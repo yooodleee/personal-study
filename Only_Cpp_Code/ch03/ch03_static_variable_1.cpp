@@ -27,7 +27,7 @@ using namespace std;
 void func() {
 
 	int a = 10;
-	static int b = 10;
+	static int b = 10;		// 정적 변수(static) 선언과 동시에 초기화 => 초기화하지 않으면 컴파일러에서 0으로 초기화함!
 
 	a++;
 	b++;
@@ -37,6 +37,8 @@ void func() {
 
 int main()
 {
+	// a 는 func 함수의 지역 변수이므로 func를 여러 번 호출하더라도 계속 10으로 초기화된다.
+	// b는 static으로 지정된 정적 변수이므로 func를 호출한만큼(5번) 1씩 증가한다(후위 연산자자)
 	func();
 	func();
 	func();
