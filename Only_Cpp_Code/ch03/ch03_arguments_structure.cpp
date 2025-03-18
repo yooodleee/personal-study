@@ -79,19 +79,21 @@
 using namespace std;
 
 
-struct Person
+struct Person			// 구조체 선언언
 {
+	// 멤버 선언언
 	std::string name;	// 이름
 	int age;			// 나이
 	float height;		// 키
 	float weight;		// 몸무게게
 };
 
-
+// 함수의 오버로딩으로 복사되어 전달 => Person* _adult
 void check_age(Person* _adult, int _count)
 {
 	for (int i = 0; i < _count; i++)
 	{
+		// 구조체의 멤ㅁ버 접근
 		if (_adult[i].age >= 25)
 		{
 			cout << "name : " << _adult[i].name << endl;
@@ -132,4 +134,25 @@ weight : 65
  * 이때는 복사본 대신 구조체에 대한 포인터(주소)를 전달하면 해결할 수 있다. 따라서 앞의 예에서는 check_age 함수의 
  * 첫 번째 매개변수를 Person *_adult처럼 구조체 포인터 변수를 선언하고, main에서 호출할 때는 구조체 배열의 이름인
  * adult를 전달했다. 즉, 구조체 배열의 시작 주소를 전달했다. 
+ */
+
+/**
+ * 구조체 초기화하기
+ * 
+ * 구조체 변수에 값을 넣을 때 하나씩 멤버에 접근하여 수행할 수도 있지만, 위의 예에서는 간편하게 중괄호를 이용해 
+ * 초기화했다. 구조체 변수가 하나일 때는 다음처럼 간단하게 초기화할 수 있다. 
+ * 
+ * 단일 구조체 초기화
+ * Person result = {"Brain", 24, 100, 70};
+ * 
+ * 구조체 배열일 때는 중괄호 단위로 구분하여 반복해서 나열해 주면 된다. 이렇게 하면 멤버 별로 값을 직접 지정하는
+ * 번거로운 작업을 피할 수 있다. 
+ * 
+ * 구조체 배열 초기화
+ * Person adult[3] = 
+ * {
+ * 		{"Brain", 24, 100, 70},
+ * 		{"Jessica", 22, 165, 55},
+ * 		{"James", 30, 170, 65},
+ * };
  */
