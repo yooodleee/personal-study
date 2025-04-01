@@ -51,7 +51,62 @@
  * 예컨대 다음은 monster_b 클래스에 정적 변수로 선언한 total_count를 여러 곳에서 접근하는
  * 모습을 보여 준다. 
  * 
+ * (stack memory)                                               (전역 메모리)
+ * first_monster            second_monster          =>      
+ * first_monster.hp         second_monster.hp       =>      monster_b::total_count
+ * first_monster.power      second_monster.power 
  * 
+ * 정적 멤버 변수는 전역 범위에서 초기화되므로 어떤 클래스에 속한 멤버인지 알 수 있도록 네임스페이스를
+ * 추가해 준다. 
+ * 클래스_이름::정적_멤버_변수 = 값;        // 클래스 범위 밖의 전역에서 초기화
+ * 
+ * 이처럼 정적 멤버 변수는 전역 범위 어디에서나 초기화할 수 있지만, 가독성을 위해 클래스가 선언된 소스
+ * 파일의 최상단이나 클래스 선언부 밑에 작성하는 편이 좋다. 참고로 헤더 파일에는 정적 멤버 변수를 
+ * 초기화하는 코드를 작성할 수 없다. 헤더 파일은 여러 곳에서 포함할 수 있어서 중복 초기화가 발생할 수 
+ * 있기 때문이다. 
+ * 
+ * * 멤버 변수 초기화
+ * class monster_b : public monster, character 
+ * {
+ * pulbic: 
+ *      monster_b(player & attack_target)
+ *          : monster_type("일반"),             // 직접 초기화
+ *          location{0, 0},                     // 유니폼 초기화
+ *          unique_id(++total_count),           // 상수 변수 초기화
+ *          target(attack_target)               // 레퍼런스 초기화
+ *          {
+ *              difficult_lavel = 10;           // 복사 초기화
+ *              quiz = new char[1024];          // 동적 메모리 할당
+ *          };
+ * 
+ * private:
+ *      string monster_type;                    // 멤버 변수 목록
+ *      int location[2];
+ *      static int total_count;
+ *      const int unique_id;
+ *      player &target;
+ *      int difficult_level;    
+ *      char *quiz;
+ * };
+ * 
+ * int monster_b::total_count = 0;              // 정적 변수 초기화
+ * 
+ * 1) 유니폼 초기화: 배열 형태의 멤버 변수를 초기화, 생성자 정의부에도 똑같은 형태로 초기화할 수 있다. 
+ *      많은 원소를 가진 배열 형태의 멤버 변수 초기화에 유용함. 
+ * 2) 상수 멤버 변수 초기화: 
+ *      상수 멤버 변수는 변경할 수 없으므로 객체 생성과 동시에 값이 정해져야 한다. 따라서 초기화 목록에서
+ *      초기화해야 한다. 
+ * 3) 레퍼런스 멤버 변수 초기화: 
+ *      레퍼런스 멤버 변수는 변경할 수 없으므로 객체 생성 동시에 값이 정해져야 한다. 따라서 초기화 목록에서
+ *      초기화해야 한다. 
+ * 4) 복사 초기화: 
+ *      정의부에서 멤버 변수에 값을 직접 대입한다. 
+ * 5) 동적 메모리 할당: 
+ *      포인터 변수의 메모리는 필요에 따라 생성자에서 초기화할 수 있다. 
+ * 6) 멤버 변수 목록: 
+ *      초기화할 멤버 변수 목록이다. 
+ * 7) 정적 멤버 변수 초기화: 
+ *      정적 멤버 변수는 프로그램 시작과 동시에 값이 지정돼야 하므로 전역 범위에서 초기화한다. 
  */
 
 #include <iostream>
