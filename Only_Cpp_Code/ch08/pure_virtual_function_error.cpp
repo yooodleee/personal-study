@@ -68,7 +68,8 @@ using namespace std;
 
 
 
-class character {
+class character 
+{
 public:
     character() : hp(100), power(100) {};
     
@@ -81,57 +82,67 @@ protected:
 };
 
 
-class player : public character {
+class player : public character 
+{
 public:
     player() {};
 };
 
 
-class monster {
+class monster 
+{
 public:
     monster() {};
     void attack(player target_player) {};
     virtual void attack_special(player target_player);
-    virtual void attack_at_down() = 0;  // 순수 가상 함수로 선언언
+    virtual void attack_at_down() = 0;  // 순수 가상 함수로 선언
 };
 
-void monster::attack_special(player target_player) {
+void monster::attack_special(player target_player) 
+{
     cout << "기본 공격 : 데미지 - 10 hp" << endl;
 }
 
 
 
-class monster_a : public monster, character {
+class monster_a : public monster, character 
+{
 public:
     virtual void attack_special(player target_player) override;
 };
 
-void monster_a::attack_special(player target_player) {
+void monster_a::attack_special(player target_player) 
+{
     cout << "인텡글 공격 : 데미지 - 15 hp" << endl;
 }
 
 
-class monster_b : public monster, character {
+class monster_b : public monster, character 
+{
 public:
     virtual void attack_special(player target_player) override;
 };
 
-void monster_b::attack_special(player target_player) {
+void monster_b::attack_special(player target_player) 
+{
     cout << "가상 공격 : 데미지 - 0 hp" << endl;
 }
 
 
-class monster_c : public monster, character {
+class monster_c : public monster, character 
+{
 public:
     virtual void attack_special(player target_player) override;
 };
 
-void monster_c::attack_special(player target_player) {
+void monster_c::attack_special(player target_player) 
+{
     cout << "강력 뇌전 공격 : 데미지 - 100 hp" << endl;
 }
 
 
-int main() {
+int main() 
+{
     list<monster*> mon_list;
 
     monster_a first_monster;
