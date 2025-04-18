@@ -3,7 +3,7 @@ import os
 
 
 # 엑셀 파일들이 있는 폴더 경로
-folder_path = './asset'
+folder_path = '../asset'
 
 
 # 모든 액셀 파일 읽어서 하나로 합치기
