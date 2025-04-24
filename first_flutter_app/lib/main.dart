@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());  // runApp() 함수는 플러터 앱을 시작하는 역할을 합니다 -> 화면에 표시할 위젯을 전달함(MyApp)
+  runApp(MyApp());  // runApp() 함수는 플러터 앱을 시작하는 역할을 합니다 -> 화면에 표시할 위젯을 전달함(MyApp)
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  // const MyApp({super.key});
+  var switchValue = false;
 
   // This widget is the root of your application.
   @override
@@ -30,16 +31,17 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
+      darkTheme: ThemeData.light(),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),  // 첫 화면에 표시할 내용
-      home: Container(
-        color: Colors.white,
-        child: Center(
-          child: Text(
-              'hello\nFlutter',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.blue, fontSize: 20),
+      home: Scaffold(
+        body: Center(
+          child: Switch(
+            value: switchValue,
+            onChanged: (value) {
+              switchValue = value;
+            }),
         ),
-      )));
+      ));
   }
 }
 
