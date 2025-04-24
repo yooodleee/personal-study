@@ -31,8 +31,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),  // 첫 화면에 표시할 내용
-      home: Text('hello\nFlttuer', textAlign: TextAlign.center),
-    );
+      home: Container(
+        color: Colors.white,
+        child: Center(
+          child: Text('hello\nFlutter', textAlign: TextAlign.center),
+      )));
   }
 }
 
