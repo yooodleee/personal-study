@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp());  // runApp() 함수는 플러터 앱을 시작하는 역할을 합니다 -> 화면에 표시할 위젯을 전달함(MyApp)
 }
 
 class MyApp extends StatelessWidget {
@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
+      title: 'Flutter Demo',  // 앱의 이름
+      theme: ThemeData(       // 앱의 테마(색상)
         // This is the theme of your application.
         //
         // TRY THIS: Try running your application with "flutter run". You'll see
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),  // 첫 화면에 표시할 내용 
     );
   }
 }
