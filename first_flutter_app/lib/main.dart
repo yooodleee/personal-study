@@ -30,7 +30,8 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),  // 첫 화면에 표시할 내용 
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),  // 첫 화면에 표시할 내용
+      home: Text('hello\nFlttuer', textAlign: TextAlign.center),
     );
   }
 }
