@@ -34,7 +34,11 @@ class MyApp extends StatelessWidget {
       home: Container(
         color: Colors.white,
         child: Center(
-          child: Text('hello\nFlutter', textAlign: TextAlign.center),
+          child: Text(
+              'hello\nFlutter',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.blue, fontSize: 20),
+        ),
       )));
   }
 }
