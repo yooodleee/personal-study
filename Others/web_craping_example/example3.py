@@ -1,20 +1,20 @@
-import requests
-from bs4 import BeautifulSoup
-import time
-from openpyxl import Workbook
+from scrapy import linkextractors
+from scrapy import spiders
 
 
-class Content: 
-    def __init__(self, url, title, body):
-        self.url = url
-        self.title = title
-        self.body = body
+class ExtractWantedSpider(spiders):
+    name = 'wanted_data'
+    allowed_domains = ['wanted.co.kr']
+    start_urls = ['https://wanted.co.kr/']
+    rules = [spiders(linkextractors(allow=r'.*'), callback='parse_items', follow=True)]
 
 
-def getPage(url):
-    req = requests.get(url)
-    return BeautifulSoup(req.text, 'html.parser')
-
-def scrapeNYTimes(url):
-    bs = getPage(url)
-    title = bs.find('h1')
+    def parse_items(self, response):
+        url = response.url
+        compan_name = response.xpath('//*[@id="__next"]/div[3]/div[2]/div/div[1]/div[1]/div[1]/h1').extract()
+        company_hire = response.xpath('//*[@id="__next"]/div[3]/div[2]/div/div[2]/section[6]/h2/div').extract()
+        tech_stack = response.xpath('//*[@id="__next"]/div[3]/div[2]/div/div[2]/section[2]/h2/div').extract()
+        wage = response.xpath('//*[@id="__next"]/div[3]/div[2]/div/div[2]/section[4]/h2/div').extract()
+        employee = response.xpath('//*[@id="__next"]/div[3]/div[2]/div/div[2]/section[4]/h2/div').extract()
+        sales = response.xpath('//*[@id="__next"]/div[3]/div[2]/div/div[2]/section[6]/h2/div').extract()
+        company_info = response.xpath('//*[@id="__next"]/div[3]/div[2]/div/div[2]/section[6]/h2/div').extract()
