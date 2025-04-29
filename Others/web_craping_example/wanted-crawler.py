@@ -8,7 +8,7 @@ from itertools import repeat
 
 import re
 from fileIO import openJsonFile, closeJsonFile, saveError
-from dbIO import readDB, insertDB, insertJobGroups, insertRecruitInfoList
+from dbIO import readDB, insertDB, insertJobGroups, insertRecruitInfoList, insertRecruitInfo
 
 import nltk
 from nltk.corpus import stopwords
@@ -159,6 +159,7 @@ def getInfosByElements(elements):
 
     return region, tags, company, details, deadline, workArea, detailsNouns
 
+
 def createrecruitInfo(contents):
     # headers = ['id', '직군', '지역', '국가', '태그', '회사명', '회사소개', '주요업무', '자격요건', '우대사항', '혜택 및 복지', '마감일', '근무지']
     headers = ['직군', '지역', '태그', '회사명', '회사소개', '주요업무', '자격요건', '우대사항', '혜택 및 복지', '마감일', '근무지', '회사소개_명사', '주요업무_명사', '자격요건_명사', '우대사항_명사', '혜택 및 복지_명사']
@@ -168,6 +169,8 @@ def createrecruitInfo(contents):
     #     file.write('\n,')
     return recruitInfo
 
+
+# 채용 상세 정보 수집
 def getRecruitInfo(recruitInfoUrl, allRecruitInfo):
     print(recruitInfoUrl)
 
@@ -192,15 +195,15 @@ def getRecruitInfo(recruitInfoUrl, allRecruitInfo):
     contents.append(group)
     contents.append(region)
     contents.append(company)
-    contents.extend(details)
+    contents.extend(details)        # [mainTask, qualification, preference, welfare]
     contents.append(deadline)
     contents.append(workArea)
-    contents.extend(detailsNouns)
+    contents.extend(detailsNouns)   # [mainTaskNouns, qualificationNouns]
 
     recruitInfo = createrecruitInfo(contents)
     allRecruitInfo.append(recruitInfo)
 
-    insertDB("recruitInfo", recruitInfo)
+    insertRecruitInfo("recruitInfo", recruitInfo)
     # REQUIRED = [recruitInfoId,  region, company, workArea]
     # with open('data/recruitInfo/origin.csv', 'a', encoding='utf-8-sig', newline='') as file:
     #     writer = csv.writer(file)
@@ -269,8 +272,15 @@ def scrapRecruitInfo(recruitInfoURLs):
 if __name__ == '__main__':
 
     manager = Manager()
+    # 모든 직군 
     getJobGroups()
+
+    # 특정 직군 채용 공고 
     insertRecruitInfoList()
+    
+    # 채용 공고 상세 정보 
+    insertRecruitInfo()
+
     # print('---------채용직군---------------------------')
     # jobGroups = getJobGroups()
     #

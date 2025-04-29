@@ -36,23 +36,57 @@ def insertRecruitInfoList(table, recruitInfos):
     finally:
         conn.close()
 
-# 데이터 삽입
-def insertDB(table, data):
-    """
-    table: 테이블명 (string)
-    data: dict 타입, ex) {"column1": value1, "column2": value2}
-    """
-    columns = ', '.join(data.keys())
-    placeholders = ', '.join(['%s'] * len(data))
-    sql = f"INSERT INTO {table} ({columns}) VALUES ({placeholders})"
-    values = tuple(data.values())
-
+# 채용 상세 정보 삽입
+def insertRecruitInfo(table, recruitInfo):
     try:
-        cursor.execute(sql, values)
+        with conn.cursor() as cursor:
+            sql = f"""
+                INSERT INTO {table} (
+                    recruitInfoId, jobGroup, region, company,
+                    mainTask, qualification, preference,
+                    welfare, deadline, workArea, mainTaskNouns, qualificationNouns
+                ) VALUES (
+                    %s, %s, %s, %s,
+                    %s, %s, %s,
+                    %s, %s, %s, %s, %s
+                )
+            """
+
+            cursor.execute(sql, (
+                recruitInfo['recruitInfoId'],
+                recruitInfo['jobGroup'],
+                recruitInfo['region'],
+                recruitInfo['company'],
+                recruitInfo['mainTask'],
+                recruitInfo['qualification'],
+                recruitInfo['preference'],
+                recruitInfo['welfare'],
+                recruitInfo['deadline'],
+                recruitInfo['workArea'],
+                recruitInfo['mainTaskNouns'],
+                recruitInfo['qualificationNouns']
+            ))
         conn.commit()
-    except Exception as e:
-        print(f"Insert Error: {e}")
-        conn.rollback()
+    finally:
+        conn.close()
+
+# 데이터 삽입
+# def insertDB(table, data):
+#     """
+#     table: 테이블명 (string)
+#     data: dict 타입, ex) {"column1": value1, "column2": value2}
+#     """
+#     columns = ', '.join(data.keys())
+#     placeholders = ', '.join(['%s'] * len(data))
+#     sql = f"INSERT INTO {table} ({columns}) VALUES ({placeholders})"
+#     values = tuple(data.values())
+
+#     try:
+#         cursor.execute(sql, values)
+#         conn.commit()
+#     except Exception as e:
+#         print(f"Insert Error: {e}")
+#         conn.rollback()
 
 
 # 데이터 읽기 
