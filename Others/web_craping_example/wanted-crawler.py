@@ -7,6 +7,7 @@ from multiprocessing import Pool, Manager
 from itertools import repeat
 
 import re
+import sys
 from fileIO import openJsonFile, closeJsonFile, saveError
 from dbIO import readDB, insertDB, insertJobGroups, insertRecruitInfoList, insertRecruitInfo
 
@@ -269,31 +270,59 @@ def scrapRecruitInfo(recruitInfoURLs):
     closeJsonFile('data/logs/RecruitInfoError.json')
 
 
+def main():
+    # 직군 정보 수집
+    print('📌 직군 수집 중...')
+    jobGroups = getJobGroups()
+
+    # 직군별 채용공고 URL 수집
+    print('📌 채용 공고 URL 수집 중...')
+    insertRecruitInfoList(jobGroups)
+
+    # DB에서 채용공고 URL 읽기
+    print('📌 채용공고 URL DB에서 불러오기...')
+    recruitInfosByGroup = readDB('recruitInfos')
+
+    # 채용공고 상세 수집
+    print('📌 채용공고 상세정보 수집 중...')
+    scrapRecruitInfo(recruitInfosByGroup)
+
+    print('✅ 전체 수집 완료!')
+
+
 if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\n🚫 프로그램이 사용자에 의해 중단되었습니다.")
+        sys.exit(0)
+    except Exception as e:
+        print(f"❌ 오류 발생: {e}")
+        sys.exit(1)
 
     manager = Manager()
-    # 모든 직군 
-    getJobGroups()
+    # # 모든 직군 
+    # getJobGroups()
 
-    # 특정 직군 채용 공고 
-    insertRecruitInfoList()
+    # # 특정 직군 채용 공고 
+    # insertRecruitInfoList()
     
-    # 채용 공고 상세 정보 
-    insertRecruitInfo()
+    # # 채용 공고 상세 정보 
+    # insertRecruitInfo()
 
-    # print('---------채용직군---------------------------')
-    # jobGroups = getJobGroups()
-    #
-    # print('---------채용공고리스트----------------------')
-    # recruitInfosByGroup = scrapRecruitList(jobGroups)
-    #
-    # print('---------채용공고---------------------------')
-    # scrapRecruitInfo()
+    # # print('---------채용직군---------------------------')
+    # # jobGroups = getJobGroups()
+    # #
+    # # print('---------채용공고리스트----------------------')
+    # # recruitInfosByGroup = scrapRecruitList(jobGroups)
+    # #
+    # # print('---------채용공고---------------------------')
+    # # scrapRecruitInfo()
 
-    recruitInfosByGroup = readDB('recruitInfos')
-    # with open('data/recruitInfoList.csv', 'r', encoding='utf-8-sig', newline='') as file:
-    #     recruitInfosByGroup = [line.split(',') for line in file]
-    # print(recruitInfosByGroup)
-    # recruitInfosByGroup = [['프론트엔드 개발자','https://www.wanted.co.kr/wd/42882']]
-    # recruitInfosByGroup =[{'jobGroup': '프론트엔드 개발자', 'url': 'https://www.wanted.co.kr/wd/43046'}]
-    scrapRecruitInfo(recruitInfosByGroup)
+    # recruitInfosByGroup = readDB('recruitInfos')
+    # # with open('data/recruitInfoList.csv', 'r', encoding='utf-8-sig', newline='') as file:
+    # #     recruitInfosByGroup = [line.split(',') for line in file]
+    # # print(recruitInfosByGroup)
+    # # recruitInfosByGroup = [['프론트엔드 개발자','https://www.wanted.co.kr/wd/42882']]
+    # # recruitInfosByGroup =[{'jobGroup': '프론트엔드 개발자', 'url': 'https://www.wanted.co.kr/wd/43046'}]
+    # scrapRecruitInfo(recruitInfosByGroup)

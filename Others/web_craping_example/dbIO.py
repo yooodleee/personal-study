@@ -93,9 +93,16 @@ def insertRecruitInfo(table, recruitInfo):
 def readDB(table):
     """
     table: 테이블명 (string)
-    반환: 리스트 안에 튜플들
+    반환: 리스트 안에 딕셔너리들
     """
-    sql = f"SELECT * FROM {table}"
-    cursor.execute(sql)
-    results = cursor.fetchall()
-    return results
+    try:
+        with conn.cursor() as cursor:
+            sql = f"SELECT * FROM `{table}`"    # table 이름은(backtick)로 감싸주는 게 안전합니다. 
+            cursor.execute(sql)
+            results = cursor.fetchall()
+            return results
+    except Exception as e:
+        print(f"DB read error: {e}")
+        return []
+    finally:
+        conn.close()
