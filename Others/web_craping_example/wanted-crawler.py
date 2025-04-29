@@ -9,7 +9,7 @@ from itertools import repeat
 import re
 import sys
 from fileIO import openJsonFile, closeJsonFile, saveError
-from dbIO import readDB, insertDB, insertJobGroups, insertRecruitInfoList, insertRecruitInfo
+from dbIO import readDB, insertJobGroups, insertRecruitInfoList, insertRecruitInfo
 
 import nltk
 from nltk.corpus import stopwords
@@ -150,7 +150,7 @@ def getInfosByElements(elements):
         print(koreanWords)
 
         korean = [word for word, _ in koreanWords if len(word) > 1 and word != '앱']
-        others = re.findall('[\d{2}]년]', detailElement.text)
+        others = re.findall('[\\d{2}]년]', detailElement.text)
         temp = []
         temp.extend(korean)
         temp.extend(english)
