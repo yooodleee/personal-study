@@ -14,15 +14,16 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 def crawl_id(limit=100,offset=0):
     url = 'http://www.wanted.jobs/api/v4/jobs?'
 
-    params ={1656232918453:'',    #사용자번호?
-    'country': 'all',
-    'tag_type_ids': 873,    #직무 카테고리 고유 id
-    'job_sort': 'job.latest_order',    #최신순 정렬
-    'locations': all,
-    'years': -1,    #경력 이상
-    'years': -1,    #경력 이하    경력상관없이 검색하려면 -1
-    'limit': limit,    #한 번에 조회 가능한 수 (최대100)
-    'offset': offset}    #조회할 게시물의 첫 index        ex) limit=100 offset=10  => 10번게시물부터 110번게시물까지 크롤링
+    params = {1656232918453:'',    #사용자번호?
+        'country': 'all',
+        'tag_type_ids': 873,    #직무 카테고리 고유 id
+        'job_sort': 'job.latest_order',    #최신순 정렬
+        'locations': all,
+        'years': -1,    #경력 이상
+        'years': -1,    #경력 이하    경력상관없이 검색하려면 -1
+        'limit': limit,    #한 번에 조회 가능한 수 (최대100)
+        'offset': offset
+    }    #조회할 게시물의 첫 index        ex) limit=100 offset=10  => 10번게시물부터 110번게시물까지 크롤링
 
     #서버에 url과 쿼리로 요청
     r = requests.get(url,
