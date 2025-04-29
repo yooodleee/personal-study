@@ -1,6 +1,5 @@
 # personal-study
 
-![image](https://github.com/user-attachments/assets/f9e8b0cb-83d1-45ad-9e25-670af4cb1045)
 
 ## **Personal Programming Repository**
 
