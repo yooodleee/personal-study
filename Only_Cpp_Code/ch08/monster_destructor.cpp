@@ -53,3 +53,10 @@ int main() {
     delete mon;
     return 0;
 }
+
+/**
+ * monster() 생성자 호출
+ * monster_a() 생성자 호출
+ * ~monster_a() 소멸자 호출
+ * ~monster() 소멸자 호출 
+ */
