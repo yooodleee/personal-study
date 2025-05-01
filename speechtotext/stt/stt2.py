@@ -16,7 +16,7 @@ def callback(indata, frames, time, status):
 
 
 # 모델 로드
-model = Model("stt/vosk-model-small-ko-0.22")
+model = Model("stt/model")
 recognizer = KaldiRecognizer(model, sample_rate)
 
 
