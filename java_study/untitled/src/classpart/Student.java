@@ -9,4 +9,8 @@ public class Student {
     public void showStudentInfo() {
         System.out.println(studentName + ", " + address);   // 이름, 주소 출력
     }
+
+    public String getStudentName() {
+        return studentName; // studnetName을 반환하는 get() 메서드 구현
+    }
 }
