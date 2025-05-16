@@ -13,4 +13,8 @@ public class Student {
     public String getStudentName() {
         return studentName; // studnetName을 반환하는 get() 메서드 구현
     }
+
+    public void setStudentName(String name) {
+        studentName = name;
+    }
 }
