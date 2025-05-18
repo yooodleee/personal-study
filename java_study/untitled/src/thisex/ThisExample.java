@@ -5,15 +5,16 @@ class BirthDay {
     int day;
     int month;
     int year;
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void printThis() {
+        System.out.println(this);   // this 출력 메서드 
+    }
 }
 
-public void setYear(int year) {
-    this.year = year;
-}
-
-public void printThis() {
-    System.out.println(this);       // this 출력 메서드
-}
 
 public class ThisExample {
     public static void main(String[] args) {
