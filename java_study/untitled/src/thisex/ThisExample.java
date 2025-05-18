@@ -11,7 +11,7 @@ class BirthDay {
     }
 
     public void printThis() {
-        System.out.println(this);   // this 출력 메서드 
+        System.out.println(this);   // this 출력 메서드
     }
 }
 
