@@ -11,6 +11,6 @@ public class Student {
     }
 
     public void setStudentName(String studentName) {
-        this.studentName = studentName;     // private 변수인 studentName에 접근해 값을 지정하는 public set() 메서드 
+        this.studentName = studentName;     // private 변수인 studentName에 접근해 값을 지정하는 public set() 메서드
     }
 }
